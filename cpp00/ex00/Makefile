@@ -6,13 +6,11 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 19:55:35 by jvacaris          #+#    #+#              #
-#    Updated: 2022/05/17 20:38:33 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/05/17 21:05:45 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
-# Reset
 COLOR_RESET = \033[0m
-
 COLOR_GREEN = \033[0;32m
 COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
