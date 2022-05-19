@@ -1,25 +1,36 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   phonebook.hpp                                      :+:      :+:    :+:   */
+/*   contact.cpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/05/17 20:48:15 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/19 21:32:41 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/05/19 21:31:20 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/05/19 21:34:00 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <iostream>
-#include <string>
 #include "contact.hpp"
 
-class PhoneBook
+Contact::Contact(/*std::string _name, std::string _surname, std::string _nickname, int _phone, std::string _secret*/void)
 {
-	private:
-		Contact	pages[8];
-		int		curr_capacity;
-	public:
-		void search_contact();
-		void add_contact();
-};
+	return ;
+	// name = _name;
+	// surname = _surname;
+	// nickname = _nickname;
+	// phone = _phone;
+	// secret = _secret;
+}
+
+Contact::~Contact(void)
+{
+	return ;
+}
+
+int valid_name(std::string name)
+{
+	if (ft_strlen(name) > 0)
+		return (1);
+	else
+		return (0);
+}

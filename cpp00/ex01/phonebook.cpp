@@ -6,17 +6,46 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:44:04 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/18 21:55:24 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/05/19 21:33:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "phonebook.hpp"
 
-Contact::Contact(std::string _name, std::string _surname, std::string _nickname, int phone, std::string)
+PhoneBook::PhoneBook(void)
+{
+	curr_capacity = 0;
+	return ;
+}
+
+PhoneBook::~PhoneBook(void)
+{
+	return ;
+}
+
+
+static int ft_strlen(std::string str)
+{
+	int a = 0;
+
+	while (str[a])
+		a++;
+	return (a);
+}
+
+void PhoneBook::add_contact()
+{
+	std::cin >> PhoneBook::pages[curr_capacity].name;
+}
+
+void PhoneBook::search_contact()
+{
+	std::cout << "Hello";
+}
 
 int main()
 {
-	Contact		itemlist[8];
+	PhoneBook	book;
 	std::string	command;
 	int			num_items = 0;
 	while (42)
@@ -25,9 +54,8 @@ int main()
 		if (!command.compare("EXIT"))
 			return(0);
 		else if (!command.compare("SEARCH"))
-			pb_search(command, itemlist, num_items);
+			PhoneBook::search_contact();
 		else if (!command.compare("ADD"))
-			pb_add(command, itemlist, &num_items);
-
+			PhoneBook::add_contact();
 	}
 }
