@@ -6,12 +6,13 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:24:03 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/19 21:43:21 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/05/28 23:52:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 class Contact
 {
@@ -19,9 +20,17 @@ class Contact
 		std::string	name;
 		std::string	surname;
 		std::string	nickname;
-		int			phone;
+		/*int*/std::string			phone;
 		std::string	secret;
 	public:
-		Contact(std::string, std::string, std::string, int, std::string);
-		int valid_name(std::string name);
+		Contact(void);
+		~Contact(void);
+		void addContact(/*int current_capacity*/);
+		void printContactOnGrid(int index);
+		void printContact(int index);
 };
+
+void grid_printHeader(void);
+void grid_printFooter(void);
+void grid_printSpaces(int a);
+void grid_printItem(std::string item);

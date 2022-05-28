@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 20:41:44 by jvacaris          #+#    #+#              #
-#    Updated: 2022/05/17 20:59:15 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/05/28 21:57:34 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,17 +16,20 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	phonebook.cpp
+SRCS =	phonebook.cpp	\
+		contact.cpp		\
+		gridmaker.cpp
 
-INCLUDE = phonehook.hpp
+INCLUDE =	phonebook.hpp	\
+			contact.hpp
 
 NAME = phonebook
 
 OBJS = addprefix{SRCS, ".o"}
 
-${NAME}:	${SRCS}
+${NAME}:	${SRCS} ${INCLUDE}
 			@echo "${COLOR_YELLOW}- Compilation started.${COLOR_RESET}"
-			@c++ -Wall -Werror -Wextra ${SRCS} -I ${INCLUDE} -o ${NAME}
+			@c++ -Wall -Werror -Wextra -std=c++98 ${SRCS} -I ${INCLUDE} #-o ${NAME}
 			@echo "${COLOR_GREEN}- Compilation done.${COLOR_RESET}"
 
 all: ${NAME}
