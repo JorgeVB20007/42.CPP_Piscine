@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:44:04 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/29 00:30:58 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/05/29 18:08:04 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,10 +96,10 @@ int main()
 	std::string	command;
 	int			curr_capacity = 0;
 
-	while (42)
+	std::cout << "Select an option (ADD | SEARCH | EXIT): ";
+	while (std::getline(std::cin, command))
 	{
-		std::cout << "Select an option (ADD | SEARCH | EXIT): ";
-		std::getline(std::cin, command);
+//		gline_result = ;
 		if (!command.compare("EXIT"))
 			return(0);
 		else if (!command.compare("SEARCH"))
@@ -125,5 +125,6 @@ int main()
 			book.preparePage(curr_capacity);
 			curr_capacity++;
 		}
+		std::cout << "Select an option (ADD | SEARCH | EXIT): ";
 	}
 }

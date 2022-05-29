@@ -6,9 +6,12 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:48:15 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/29 00:31:48 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/05/29 17:26:26 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef PHONEBOOK_HPP
+# define PHONEBOOK_HPP
 
 #include <iostream>
 #include <string>
@@ -27,3 +30,5 @@ class PhoneBook
 		void	moveUp();
 //		void	increase_capacity(void);
 };
+
+#endif

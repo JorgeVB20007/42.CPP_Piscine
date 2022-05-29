@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 20:41:44 by jvacaris          #+#    #+#              #
-#    Updated: 2022/05/28 21:57:34 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/05/29 23:03:42 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,28 +19,43 @@ COLOR_CYAN = \033[0;36m
 SRCS =	phonebook.cpp	\
 		contact.cpp		\
 		gridmaker.cpp
+SRCS_DIR = ./
 
 INCLUDE =	phonebook.hpp	\
 			contact.hpp
+INCLUDE_DIR = ./
+
+OBJS_DIR = ./objs/
+
+CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = phonebook
 
-OBJS = addprefix{SRCS, ".o"}
+OBJ_FILES = $(SRCS:.cpp=.o)
+OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
 
-${NAME}:	${SRCS} ${INCLUDE}
-			@echo "${COLOR_YELLOW}- Compilation started.${COLOR_RESET}"
-			@c++ -Wall -Werror -Wextra -std=c++98 ${SRCS} -I ${INCLUDE} #-o ${NAME}
-			@echo "${COLOR_GREEN}- Compilation done.${COLOR_RESET}"
+all: obj $(NAME)
 
-all: ${NAME}
+obj:
+	@mkdir -p $(OBJS_DIR)
+
+
+$(OBJS_DIR)%.o: $(SRCS_DIR)%.cpp
+	@c++ $(CPP_FLAGS) -I $(INCLUDE_DIR) -o $@ -c $<
+
+$(NAME): $(OBJ_FILES_INFOLDER)
+	@echo "$(COLOR_YELLOW)- Compilation started.$(COLOR_RESET)"
+	@c++ $(CPP_FLAGS) $(OBJ_FILES_INFOLDER) -o $(NAME)
+	@echo "$(COLOR_GREEN)- Compilation done.$(COLOR_RESET)"
+
 
 clean:
-			@echo "${COLOR_CYAN}- Cleaning objects.${COLOR_RESET}"
-			@rm -rf ${OBJS}
+			@echo "$(COLOR_CYAN)- Cleaning objects.$(COLOR_RESET)"
+			@rm -rf $(OBJS_DIR)
 
 fclean:		clean
-			@echo "${COLOR_CYAN}- Cleaning executable:${COLOR_BLUE}" ${NAME}"${COLOR_RESET}""."
-			@rm -rf ${NAME}
+			@echo "$(COLOR_CYAN)- Cleaning executable:$(COLOR_BLUE)" $(NAME)"$(COLOR_RESET)""."
+			@rm -rf $(NAME)
 
 re:			fclean all
 

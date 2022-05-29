@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 19:55:35 by jvacaris          #+#    #+#              #
-#    Updated: 2022/05/17 21:05:45 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/05/29 19:30:54 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -20,7 +20,7 @@ SRCS =	megaphone.cpp
 
 NAME = megaphone
 
-OBJS = addprefix{SRCS, ".o"}
+OBJS = $(SRCS:.cpp=.o)
 
 ${NAME}:	${SRCS}
 			@echo "${COLOR_YELLOW}- Compilation started.${COLOR_RESET}"
