@@ -4,3 +4,5 @@ a.out
 .vscode
 *.gch
 *.txt
+objs/
+*.o

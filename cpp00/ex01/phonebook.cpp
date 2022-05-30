@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:44:04 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/29 18:08:04 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/05/30 18:04:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,7 +26,7 @@ void PhoneBook::preparePage(int curr_capacity)
 {
 	if (curr_capacity < 8)
 	{
-		pages[curr_capacity].addContact(/*curr_capacity*/);
+		pages[curr_capacity].addContact();
 	}
 }
 
@@ -110,7 +110,7 @@ int main()
 				std::cout << "Select a contact (1 - " << curr_capacity << "): ";
 				std::getline(std::cin, command);
 				if (isNumber(command))
-					book.displayContact(std::stoi(command), curr_capacity);
+					book.displayContact(atoi(command), curr_capacity);
 				else
 					std::cout << "ERROR: The answer either is not a number or is outside the limits." << std::endl;
 			}
