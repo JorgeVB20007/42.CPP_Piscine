@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:44:04 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/30 18:04:55 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:26:21 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,10 +82,10 @@ static int isNumber(std::string str)
 	{
 		if (str[a] == ' ')
 			a++;
-		else if ((str[a] == '+' || str[a] == '-') && std::isdigit(str[a + 1]) && (int)str.length() < 8 + a)
+		else if ((str[a] == '+' || str[a] == '-') && std::isdigit(str[a + 1]) && (int)str.length() < 8 + a && (int)str.length() < 128)
 			return (1);
 		else
-			return (std::isdigit(str[a]) && (int)str.length() < 8 + a);
+			return (std::isdigit(str[a]) && (int)str.length() < 8 + a && (int)str.length() < 128);
 	}
 	return (0);
 }
@@ -95,11 +95,11 @@ int main()
 	PhoneBook	book;
 	std::string	command;
 	int			curr_capacity = 0;
+	char		buff[128];
 
 	std::cout << "Select an option (ADD | SEARCH | EXIT): ";
 	while (std::getline(std::cin, command))
 	{
-//		gline_result = ;
 		if (!command.compare("EXIT"))
 			return(0);
 		else if (!command.compare("SEARCH"))
@@ -110,7 +110,10 @@ int main()
 				std::cout << "Select a contact (1 - " << curr_capacity << "): ";
 				std::getline(std::cin, command);
 				if (isNumber(command))
-					book.displayContact(atoi(command), curr_capacity);
+				{
+					strcpy(buff, command.c_str());
+					book.displayContact(std::atoi(buff), curr_capacity);
+				}
 				else
 					std::cout << "ERROR: The answer either is not a number or is outside the limits." << std::endl;
 			}

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/19 21:24:03 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/30 00:51:31 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:25:44 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <cstdlib>
 
 class Contact
 {

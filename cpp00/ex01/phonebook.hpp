@@ -6,15 +6,13 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/05/17 20:48:15 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/05/29 17:26:26 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/07 21:26:01 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef PHONEBOOK_HPP
 # define PHONEBOOK_HPP
 
-#include <iostream>
-#include <string>
 #include "contact.hpp"
 
 class PhoneBook
