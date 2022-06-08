@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/08 20:56:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/08 21:52:24 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/08 22:23:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class Zombie
 
 };
 
-	Zombie* newZombie(std::string name);
+Zombie* newZombie(std::string name);
+void randomChump( std::string name );
 
 #endif
