@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/05/17 20:41:44 by jvacaris          #+#    #+#              #
-#    Updated: 2022/06/12 21:34:06 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/06/12 21:50:03 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,9 +17,9 @@ COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
 SRCS =	main.cpp	\
-		newZombie.cpp		\
 		Zombie.cpp		\
-		randomChump.cpp
+		ZombieHorde.cpp		\
+		
 SRCS_DIR = ./
 
 INCLUDE =	Zombie.hpp	
@@ -32,7 +32,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = zombies
+NAME = manyzombies
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
