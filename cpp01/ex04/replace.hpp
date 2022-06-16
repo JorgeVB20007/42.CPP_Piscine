@@ -1,29 +1,19 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   replace.hpp                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 18:11:14 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/15 20:56:57 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/06/16 20:50:58 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/06/16 22:09:32 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef WEAPON_H
+# define WEAPON_H
 
-void HumanA::attack()
-{
-	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
-	return ;
-}
+# include <iostream>
+# include <fstream>
 
-HumanA::HumanA(const std::string name, Weapon & weapon) : _name(name), _weapon(weapon)
-{
-	return;
-}
-
-HumanA::~HumanA()
-{
-	return ;
-}
+#endif

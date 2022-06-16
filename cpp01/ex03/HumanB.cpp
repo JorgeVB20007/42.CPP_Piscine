@@ -6,11 +6,12 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:11:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/14 21:58:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/15 20:44:48 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "HumanB.hpp"
+#include <iostream>
 
 void HumanB::attack()
 {
@@ -21,7 +22,7 @@ void HumanB::attack()
 	return ;
 }
 
-void HumanB::setWeapon(Weapon newweapon)
+void HumanB::setWeapon(Weapon &newweapon)
 {
 	_weapon = &newweapon;
 }

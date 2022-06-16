@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 16:58:36 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/14 22:11:02 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/16 19:03:39 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,10 +18,9 @@ void Weapon::setType(const std::string newType)
 }
 
 //// Might be wrong, as it's asking for a reference to the string
-const std::string &Weapon::getType(void)
+const std::string Weapon::getType(void)
 {
-	const std::string &typeREF = _type;
-	return (typeREF);
+	return (_type);
 }
 
 Weapon::Weapon()

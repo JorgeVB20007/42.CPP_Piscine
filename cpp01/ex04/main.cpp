@@ -1,29 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 18:11:14 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/15 20:56:57 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/06/16 21:45:40 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/06/16 22:56:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#include "replace.hpp"
 
-void HumanA::attack()
+int main(int argc, char **argv)
 {
-	std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
-	return ;
-}
+	std::ifstream	finput;
+	std::string		content;
+	std::string		line;
 
-HumanA::HumanA(const std::string name, Weapon & weapon) : _name(name), _weapon(weapon)
-{
-	return;
-}
+	if (argc != 4)
+	{
+		std::cout << "Wrong number of paremeters. Got " << argc - 1 << "expected 4." << std::endl;
+		return (1);
+	}
 
-HumanA::~HumanA()
-{
-	return ;
+	finput.open(argv[1]);
+
+
+	while (std::getline(line))		//! getline might not work when the string passed contains newlines.
+	{
+
+	}
+
+
+
+	return (0);
 }
