@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:50:58 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/16 22:09:32 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/18 23:46:52 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,5 +15,6 @@
 
 # include <iostream>
 # include <fstream>
+# include <string>
 
 #endif
