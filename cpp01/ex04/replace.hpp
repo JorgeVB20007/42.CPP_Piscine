@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/16 20:50:58 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/18 23:46:52 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/20 20:45:51 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,5 +16,7 @@
 # include <iostream>
 # include <fstream>
 # include <string>
+
+int ft_replacer(char *argv[]);
 
 #endif

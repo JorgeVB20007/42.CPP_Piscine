@@ -8,3 +8,4 @@ objs/
 *.o
 *.json
 *justatest*
+*.replace
