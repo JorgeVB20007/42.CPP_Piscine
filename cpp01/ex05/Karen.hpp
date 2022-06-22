@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 22:18:02 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/20 22:21:58 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/21 19:57:25 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,6 +18,8 @@
 class Karen
 {
 	public:
+		Karen();
+		~Karen();
 		void complain( std::string level );
 	private:
 		void debug( void );

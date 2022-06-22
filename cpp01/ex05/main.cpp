@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/20 22:18:04 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/20 22:32:48 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/22 22:15:50 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,14 +16,16 @@ int main()
 {
 	Karen pence;
 	
-	std::cout << std::endl << "   ----------   " << std::endl;
-	std::cout << std::endl << "Printing DEBUG:" << std::endl;
+	std::cout << "\033[0;33m   --------------------   \033[0m";
+	std::cout << std::endl << "\033[0;36mPrinting DEBUG:\033[0m" << std::endl;
 	pence.complain("debug");
-	std::cout << std::endl << "Printing INFO:" << std::endl;
+	std::cout << std::endl << "\033[0;36mPrinting INFO:\033[0m" << std::endl;
 	pence.complain("info");
-	std::cout << std::endl << "Printing WARNING:" << std::endl;
+	std::cout << std::endl << "\033[0;36mPrinting WARNING:\033[0m" << std::endl;
 	pence.complain("warning");
-	std::cout << std::endl << "Printing ERROR:" << std::endl;
+	std::cout << std::endl << "\033[0;36mPrinting ERROR:\033[0m" << std::endl;
 	pence.complain("error");
-	std::cout << std::endl << "   ----------   " << std::endl;
+	std::cout << std::endl << "\033[0;36mPrinting THE MASSIVE ERROR:\033[0m" << std::endl;
+	pence.complain("idk");
+	std::cout << "\033[0;33m   --------------------   \033[0m" << std::endl;
 }
