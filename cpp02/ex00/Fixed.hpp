@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   HumanA.cpp                                         :+:      :+:    :+:   */
+/*   Fixed.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/06/14 18:11:14 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/29 21:22:37 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/06/23 21:39:25 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/06/29 22:40:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "HumanA.hpp"
+#ifndef FIXED_H
+# define FIXED_H
 
-void HumanA::attack()
-{
-	if (_weapon.getType().length() <= 0)
-		std::cout << _name << " attacks with the power of speech" << std::endl;
-	else
-		std::cout << _name << " attacks with his " << _weapon.getType() << std::endl;
-	return ;
-}
+# include <iostream>
 
-HumanA::HumanA(const std::string name, Weapon & weapon) : _name(name), _weapon(weapon)
+class Fixed
 {
-	return;
-}
+	public:
+		Fixed();
+		~Fixed();
+		//TODO Copy constructor??
+		//TODO Assignation operator overload??
+		int getRawBits( void ) const;
+		void setRawBits( int const raw );
+	private:
+		int fpv;
+		//TODO static constant integer??
+	
+};
 
-HumanA::~HumanA()
-{
-	return ;
-}
+#endif

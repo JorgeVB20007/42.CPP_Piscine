@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/14 18:11:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/06/15 20:44:48 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/06/29 19:47:22 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,10 +15,10 @@
 
 void HumanB::attack()
 {
-	if (_weapon->getType().length() > 0)
-		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
-	else
+	if (!_weapon || _weapon->getType().length() <= 0)
 		std::cout << _name << " attacks with the power of speech" << std::endl;
+	else
+		std::cout << _name << " attacks with his " << _weapon->getType() << std::endl;
 	return ;
 }
 
