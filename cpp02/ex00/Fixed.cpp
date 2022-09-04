@@ -1,15 +1,39 @@
-#include <iostream>
+#include "Fixed.hpp"
 
-int		main( void ) {
-	Fixed a;
-	Fixed b( a );
-	Fixed c;
+Fixed::Fixed(void)
+{
+	std::cout << "Default constructor called" << std::endl;
+	_fpv = 0;
+}
 
-	c = b;
+Fixed::Fixed( Fixed &tocopy )
+{
+	std::cout << "Copy constructor called" << std::endl;
+	_fpv = tocopy.getRawBits();
+}
 
-	std::cout << a.getRawBits() << std::endl;
-	std::cout << b.getRawBits() << std::endl;
-	std::cout << c.getRawBits() << std::endl;
+Fixed::~Fixed(void)
+{
+	std::cout << "Destructor called" << std::endl;
+	return ;
+}
 
-	return 0;
+int Fixed::getRawBits( void ) const
+{
+	std::cout << "getRawBits member function called" << std::endl;
+	return (_fpv);
+}
+
+void Fixed::setRawBits(int const raw)
+{
+	std::cout << "setRawBits member function called" << std::endl;
+	_fpv = raw;
+	return ;
+}
+
+Fixed & Fixed::operator = (Fixed &toequalize)
+{
+	std::cout << "Assignation operator called" << std::endl;
+	_fpv = toequalize.getRawBits();
+	return *this;
 }
