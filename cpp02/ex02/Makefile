@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/09/07 21:28:11 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/09/09 16:34:40 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,8 +16,9 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	main.cpp	\
-		Fixed.cpp
+SRCS =	Fixed.cpp	\
+		mymain.cpp	\
+		#mymain.cpp
 
 SRCS_DIR = ./
 
