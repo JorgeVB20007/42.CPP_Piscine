@@ -15,7 +15,7 @@ Fixed::Fixed( Fixed const &tocopy )
 Fixed::Fixed( const float fnumber )
 {
 	std::cout << "Float constructor called" << std::endl;
-	_fpv = (float)fnumber * (float)(1 << _frac_bits);
+	_fpv = roundf((float)fnumber * (float)(1 << _frac_bits));
 }
 
 Fixed::Fixed( const int inumber )

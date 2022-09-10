@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/09/10 23:00:50 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/09/10 23:46:10 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,12 +17,15 @@ COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
 SRCS =	Fixed.cpp	\
+		Point.cpp	\
+		bsp.cpp		\
 		main.cpp	\
 		#mymain.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =	Fixed.hpp
+INCLUDE =	Fixed.hpp	\
+			Point.hpp	\
 
 INCLUDE_DIR = ./
 
@@ -32,7 +35,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = fixed
+NAME = bsp
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))

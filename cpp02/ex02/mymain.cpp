@@ -11,23 +11,38 @@ std::string boolprint(int a)
 int main()
 {
 	{
-		Fixed a(0);
-		Fixed b(0);
+		Fixed a(-5);
+		Fixed b(2.125f);
+		const Fixed c(4);
+		const Fixed d(4.01f);
 
 		std::cout << std::endl << "\033[1ma = " << a << "   b = " << b << "\033[0m" << std::endl;
 		
 		std::cout << std::endl << "\033[0;33m-- Comparators --\033[0m" << std::endl;
-		std::cout << "(a > b) - " << boolprint(a > b) << std::endl;
-		std::cout << "(a < b) - " << boolprint(a < b) << std::endl;
-		std::cout << "(a >= b) - " << boolprint(a >= b) << std::endl;
-		std::cout << "(a <= b) - " << boolprint(a <= b) << std::endl;
-		std::cout << "(a == b) - " << boolprint(a == b) << std::endl;
-		std::cout << "(a != b) - " << boolprint(a != b) << std::endl;
+		std::cout << "(a > b) " << ARROW << boolprint(a > b) << std::endl;
+		std::cout << "(a < b) " << ARROW << boolprint(a < b) << std::endl;
+		std::cout << "(a >= b) " << ARROW << boolprint(a >= b) << std::endl;
+		std::cout << "(a <= b) " << ARROW << boolprint(a <= b) << std::endl;
+		std::cout << "(a == b) " << ARROW << boolprint(a == b) << std::endl;
+		std::cout << "(a != b) " << ARROW << boolprint(a != b) << std::endl;
 
 		std::cout << std::endl << "\033[0;33m--- Operators ---\033[0m" << std::endl;
-		std::cout << "(a + b) - " << (a + b) << std::endl;
-		std::cout << "(a - b) - " << (a - b) << std::endl;
-		std::cout << "(a * b) - " << (a * b) << std::endl;
-		std::cout << "(a / b) - " << (a / b) << std::endl;
+		std::cout << "(a + b) " << ARROW << (a + b) << std::endl;
+		std::cout << "(a - b) " << ARROW << (a - b) << std::endl;
+		std::cout << "(a * b) " << ARROW << (a * b) << std::endl;
+		std::cout << "(a / b) " << ARROW << (a / b) << std::endl;
+
+
+		std::cout << std::endl << "\033[0;33m--- ++s & --s ---\033[0m" << std::endl;
+		std::cout << "a | a++ | a " << ARROW << a << " | " << a++ << " | " << a << std::endl;
+		std::cout << "a | a-- | a " << ARROW << a << " | " << a-- << " | " << a << std::endl;
+		std::cout << "a | ++a | a " << ARROW << a << " | " << ++a << " | " << a << std::endl;
+		std::cout << "a | --a | a " << ARROW << a << " | " << --a << " | " << a << std::endl;
+
+		std::cout << std::endl << "\033[0;33m-- Maxs & Mins --\033[0m" << std::endl;
+		std::cout << "Min a,b " << ARROW << Fixed::min(a, b) << std::endl;
+		std::cout << "Max a,b " << ARROW << Fixed::max(a, b) << std::endl;
+		std::cout << "Min c,d " << ARROW << Fixed::min(c, d) << std::endl;
+		std::cout << "Max c,d " << ARROW << Fixed::max(c, d) << std::endl;
 	}
 }
