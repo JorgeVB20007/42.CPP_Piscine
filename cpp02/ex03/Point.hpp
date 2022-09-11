@@ -8,11 +8,12 @@ class Point
 	public:
 		Point();
 		Point(Point &tocopy);
+		Point(const Point &tocopy);
 		Point(const float x, const float y);
 		~Point();
-		float getX();
-		float getY();
-//TODO		Fixed & operator = (Fixed const &toequalize); //????
+		Fixed getX() const;
+		Fixed getY() const;
+		Point & operator = (Point const &toequalize);
 	private:
 		Fixed const x;
 		Fixed const y;

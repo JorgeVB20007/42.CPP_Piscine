@@ -8,18 +8,18 @@ std::string boolprint(int a)
 		return ("\033[1;31mFalse\033[0m");
 }
 
-void announcepoint(Point pt, std::string name)
+static void announcepoint(Point const pt, std::string name)
 {
-	std::cout << "Point " << name << " (" << pt.getX() << " , " << pt.getY() << ") " << std::endl;
+	std::cout << "Point " << name << " (" << pt.getX().toFloat() << " , " << pt.getY().toFloat() << ") " << std::endl;
 }
 
 int	main( void )
 {
-	Point	ap;
-	Point	bp(5.0f, 1.5f);
-	Point	cp(2.5f, 6.0f);
+	Point const	ap;
+	Point const	bp(4.9f, -0.1f);
+	Point const	cp(-0.1f, 4.9f);
 
-	Point	pp(2.0f, 2.0f);
+	Point const	pp(2.1f, 1.9f);
 	bool	result;
 
 	announcepoint(ap, "A");

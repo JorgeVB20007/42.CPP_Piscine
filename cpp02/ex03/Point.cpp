@@ -12,6 +12,12 @@ Point::Point(Point &tocopy): x(tocopy.x), y(tocopy.y)
 		std::cout << "Copy constructor called." << std::endl;
 }
 
+Point::Point(const Point &tocopy): x(tocopy.x), y(tocopy.y)
+{
+	if (SHOWLOG)
+		std::cout << "Copy constructor called." << std::endl;
+}
+
 Point::Point(const float nx, const float ny): x(nx), y(ny)
 {
 	if (SHOWLOG)
@@ -24,12 +30,19 @@ Point::~Point()
 		std::cout << "Destructor called." << std::endl;
 }
 
-float Point::getX()
+Fixed Point::getX() const
 {
-	return (x.toFloat());
+	return (x);
 }
 
-float Point::getY()
+Fixed Point::getY() const
 {
-	return (y.toFloat());
+	return (y);
+}
+
+Point & Point::operator = (Point const &toequalize)
+{
+	(Fixed)x = toequalize.getX();
+	(Fixed)y = toequalize.getY();
+	return *this;
 }
