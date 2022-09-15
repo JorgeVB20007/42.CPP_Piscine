@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   Fixed.cpp                                          :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 17:20:19 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/09/15 17:20:20 by jvacaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 Fixed::Fixed(void)
@@ -113,15 +125,13 @@ bool Fixed::operator != (Fixed const &second)
 
 Fixed Fixed::operator + (Fixed const &second)
 {
-	Fixed result;
-	result.setRawBits(_fpv + second.getRawBits());
+	Fixed result(this->toFloat() + second.toFloat());
 	return (result);
 }
 
 Fixed Fixed::operator - (Fixed const &second)
 {
-	Fixed result;
-	result.setRawBits(_fpv - second.getRawBits());
+	Fixed result(this->toFloat() - second.toFloat());
 	return (result);
 }
 
@@ -152,16 +162,16 @@ Fixed Fixed::operator / (Fixed const &second)
 	return (result);
 }
 
-Fixed operator ++ (Fixed &number)
+Fixed &operator ++ (Fixed &number)
 {
 
-	number.setRawBits(number.getRawBits() + /*(1 << 8)*/1);
+	number.setRawBits(number.getRawBits() + 1);
 	return (number);
 }
 
-Fixed operator -- (Fixed &number)
+Fixed &operator -- (Fixed &number)
 {
-	number.setRawBits(number.getRawBits() - /*(1 << 8)*/1);
+	number.setRawBits(number.getRawBits() - 1);
 	return (number);
 }
 
@@ -170,7 +180,7 @@ Fixed Fixed::operator ++ (int)
 	Fixed result;
 
 	result.setRawBits(_fpv);
-	_fpv = _fpv + /*(1 << 8)*/1;
+	_fpv = _fpv + 1;
 	return (result);
 }
 
@@ -179,7 +189,7 @@ Fixed Fixed::operator -- (int)
 	Fixed result;
 
 	result.setRawBits(_fpv);
-	_fpv = _fpv - /*(1 << 8)*/1;
+	_fpv = _fpv - 1;
 	return (result);
 }
 

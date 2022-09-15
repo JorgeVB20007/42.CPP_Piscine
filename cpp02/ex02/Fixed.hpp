@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/06/23 21:39:25 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/10 22:09:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/13 14:18:53 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,8 +55,8 @@ class Fixed
 	
 };
 
-Fixed operator ++ (Fixed &number);
-Fixed operator -- (Fixed &number);
+Fixed &operator ++ (Fixed &number);
+Fixed &operator -- (Fixed &number);
 
 std::ostream & operator << (std::ostream &output, Fixed const &toequalize);
 

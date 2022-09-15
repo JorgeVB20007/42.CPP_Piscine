@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   mymain.cpp                                         :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2022/09/15 17:20:31 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/09/15 17:20:32 by jvacaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "Fixed.hpp"
 
 std::string boolprint(int a)
@@ -11,8 +23,8 @@ std::string boolprint(int a)
 int main()
 {
 	{
-		Fixed a(-5);
-		Fixed b(2.125f);
+		Fixed a(2.5f);
+		Fixed b(1.75f);
 		const Fixed c(4);
 		const Fixed d(4.01f);
 
