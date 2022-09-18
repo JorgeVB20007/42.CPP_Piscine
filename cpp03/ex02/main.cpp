@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:14:02 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 23:43:32 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/18 23:53:42 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,5 +35,6 @@ int main()
 	frag.attack("Bob-omb");
 	frag.takeDamage(40);
 	frag.beRepaired(5);
+
 
 }
