@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/16 20:32:20 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/18 21:58:18 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,8 +29,14 @@ ClapTrap::~ClapTrap()
 void ClapTrap::attack(std::string const & target)
 {
 	if (hp > 0 && egypts > 0)
+	{	
 		std::cout << "ClapTrap " << name << " attacked " << target << ", causing " << atkdmg << " points of damage!" << std::endl;
-	egypts--;
+		egypts--;
+	}	
+	else if (hp <= 0)
+		std::cout << "ClapTrap " << name << " was previously diagnosed with death and is incapable of attacking :/" << std::endl;
+	else
+		std::cout << "ClapTrap " << name << " is out of energy." << std::endl;
 }
 
 void ClapTrap::takeDamage(unsigned int amount)
@@ -40,12 +46,15 @@ void ClapTrap::takeDamage(unsigned int amount)
 	if (hp <= 0)
 		std::cout << "         " << name << " died." << std::endl;
 	else
-		std::cout << "         " << name << " has " << hp << " hp left." << std::endl;
+		std::cout << "         " << name << " has " << hp << " HP left." << std::endl;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)
 {
+	if (hp > 0)
+		std::cout << "ClapTrap " << name << " got healed by " << amount << " HP" << std::endl;
+	else
+		std::cout << "ClapTrap " << name << " revived with " << amount << " HP" << std::endl;
 	hp += amount;
-	std::cout << "ClapTrap " << name << " got healed by " << amount << " hp" << std::endl;
-	std::cout << "         " << name << " has " << hp << " hp left." << std::endl;
+	std::cout << "         " << name << " has " << hp << " HP left." << std::endl;
 }

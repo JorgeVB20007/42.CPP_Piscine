@@ -1,42 +1,32 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ClapTrap.hpp                                       :+:      :+:    :+:   */
+/*   ScavTrap.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 21:16:26 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/18 23:06:53 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CLAPTRAP_HPP
-# define CLAPTRAP_HPP
+#ifndef SCAVTRAP_HPP
+# define SCAVTRAP_HPP
 
-#include <iostream>
+#include "ClapTrap.hpp"
 
-class ClapTrap
+class ScavTrap : public ClapTrap
 {
 	private:
-		std::string name;
+/*		std::string name;
 		int hp;
 		int egypts;
-		int atkdmg;
+		int atkdmg;*/
 	public:
-		ClapTrap();
-		ClapTrap(std::string _name);
-		ClapTrap(std::string _name, int _hp, int _egypts, int _atkdmg);
-		~ClapTrap();
+		ScavTrap(std::string _name);
+		~ScavTrap();
 		void attack(std::string const & target);
-		void takeDamage(unsigned int amount);
-		void beRepaired(unsigned int amount);
-		int get_hp();
-		int get_egypts();
-		int get_atkdmg();
-		std::string get_name();
-		void set_hp(int value);
-		void set_egypts(int value);
-		void set_atkdmg(int value);
+		void guardGate();
 };
 
 
