@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 22:50:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 23:42:19 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/19 20:07:58 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ FragTrap::~FragTrap()
 
 void FragTrap::highFivesGuys(void)
 {
-	std::cout << "High-five anyone? :D" << std::endl;
+	std::cout << "FragTrap High-five anyone? :D" << std::endl;
 }
 
 void FragTrap::attack(std::string const & target)
