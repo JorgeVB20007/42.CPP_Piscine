@@ -6,13 +6,13 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 21:58:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/20 16:09:34 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ClapTrap.hpp"
 
-/*
+
 ClapTrap::ClapTrap()
 {
 	name = "";
@@ -21,7 +21,7 @@ ClapTrap::ClapTrap()
 	atkdmg = 0;
 	std::cout << "ClapTrap default constructor called." << std::endl;
 }
-*/
+
 ClapTrap::ClapTrap(std::string _name)
 {
 	name = _name;

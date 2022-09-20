@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/09/20 19:19:45 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/09/20 19:20:26 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,13 +19,15 @@ COLOR_CYAN = \033[0;36m
 SRCS =	ClapTrap.cpp	\
 		ScavTrap.cpp	\
 		FragTrap.cpp	\
+		DiamondTrap.cpp	\
 		main.cpp
 
 SRCS_DIR = ./
 
 INCLUDE =	ClapTrap.hpp	\
 			ScavTrap.hpp	\
-			FragTrap.hpp
+			FragTrap.hpp	\
+			DiamondTrap.hpp
 
 INCLUDE_DIR = ./
 
