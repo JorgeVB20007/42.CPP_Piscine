@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 23:06:53 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/24 19:38:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 #include "ClapTrap.hpp"
 
-class ScavTrap : public ClapTrap
+class ScavTrap : virtual public ClapTrap
 {
 	private:
 /*		std::string name;
@@ -24,7 +24,7 @@ class ScavTrap : public ClapTrap
 		int atkdmg;*/
 	public:
 		ScavTrap(std::string _name);
-		~ScavTrap();
+		virtual ~ScavTrap();
 		void attack(std::string const & target);
 		void guardGate();
 };
