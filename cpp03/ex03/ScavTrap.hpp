@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/24 19:38:10 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/25 19:50:23 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ class ScavTrap : virtual public ClapTrap
 		int atkdmg;*/
 	public:
 		ScavTrap(std::string _name);
-		virtual ~ScavTrap();
+		/*virtual*/ ~ScavTrap();
 		void attack(std::string const & target);
 		void guardGate();
 };
