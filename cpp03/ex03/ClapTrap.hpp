@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/24 16:17:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:23:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,7 @@ class ClapTrap
 		ClapTrap(std::string _name);
 		ClapTrap(std::string _name, int _hp, int _egypts, int _atkdmg);
 		virtual ~ClapTrap();
+		ClapTrap & operator = (ClapTrap &toequalize);
 		void attack(std::string const & target);
 		void takeDamage(unsigned int amount);
 		void beRepaired(unsigned int amount);

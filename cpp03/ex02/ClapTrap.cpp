@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/20 16:09:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:40:41 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,14 @@ ClapTrap::ClapTrap(std::string _name, int _hp, int _egypts, int _atkdmg)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap destructor called." << std::endl;
+}
+
+ClapTrap & ClapTrap::operator = (ClapTrap &toequalize)
+{
+	hp = toequalize.get_hp();
+	egypts = toequalize.get_egypts();
+	atkdmg = toequalize.get_atkdmg();
+	return(*this);
 }
 
 void ClapTrap::attack(std::string const & target)

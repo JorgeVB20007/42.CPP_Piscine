@@ -6,11 +6,16 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 22:50:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/19 20:07:58 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:57:25 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "FragTrap.hpp"
+
+FragTrap::FragTrap(): ClapTrap("", 100, 100, 30)
+{
+	std::cout << "FragTrap default constructor called." << std::endl;
+}
 
 FragTrap::FragTrap(std::string _name): ClapTrap(_name, 100, 100, 30)
 {
@@ -20,6 +25,14 @@ FragTrap::FragTrap(std::string _name): ClapTrap(_name, 100, 100, 30)
 FragTrap::~FragTrap()
 {
 	std::cout << "FragTrap destructor called." << std::endl;
+}
+
+FragTrap & FragTrap::operator = (FragTrap &toequalize)
+{
+	ClapTrap::set_hp(toequalize.get_hp());
+	ClapTrap::set_egypts(toequalize.get_egypts());
+	ClapTrap::set_atkdmg(toequalize.get_atkdmg());
+	return(*this);
 }
 
 void FragTrap::highFivesGuys(void)

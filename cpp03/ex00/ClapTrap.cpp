@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 21:58:18 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:43:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,14 @@ ClapTrap::ClapTrap(std::string _name)
 ClapTrap::~ClapTrap()
 {
 	std::cout << "ClapTrap destructor called." << std::endl;
+}
+
+ClapTrap & ClapTrap::operator = (ClapTrap &toequalize)
+{
+	hp = toequalize.get_hp();
+	egypts = toequalize.get_egypts();
+	atkdmg = toequalize.get_atkdmg();
+	return(*this);
 }
 
 void ClapTrap::attack(std::string const & target)
@@ -57,4 +65,39 @@ void ClapTrap::beRepaired(unsigned int amount)
 		std::cout << "ClapTrap " << name << " revived with " << amount << " HP" << std::endl;
 	hp += amount;
 	std::cout << "         " << name << " has " << hp << " HP left." << std::endl;
+}
+
+std::string ClapTrap::get_name()
+{
+	return (name);
+}
+
+int ClapTrap::get_hp()
+{
+	return (hp);
+}
+
+int ClapTrap::get_egypts()
+{
+	return (egypts);
+}
+
+int ClapTrap::get_atkdmg()
+{
+	return (atkdmg);
+}
+
+void ClapTrap::set_hp(int value)
+{
+	hp = value;
+}
+
+void ClapTrap::set_egypts(int value)
+{
+	egypts = value;
+}
+
+void ClapTrap::set_atkdmg(int value)
+{
+	atkdmg = value;
 }

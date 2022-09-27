@@ -6,11 +6,16 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 21:37:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:01:22 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ScavTrap.hpp"
+
+ScavTrap::ScavTrap(): ClapTrap("", 100, 50, 20)
+{
+	std::cout << "ScavTrap default constructor called." << std::endl;
+}
 
 ScavTrap::ScavTrap(std::string _name): ClapTrap(_name, 100, 50, 20)
 {
@@ -33,5 +38,4 @@ void ScavTrap::guardGate()
 {
 	std::cout << "ScavTrap " << get_name() << " has entered Gate keeper mode." << std::endl;
 }
-
 

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/24 17:37:34 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 21:25:13 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,6 +45,14 @@ ClapTrap::~ClapTrap()
 	std::cout << "ClapTrap destructor called." << std::endl;
 }
 
+ClapTrap & ClapTrap::operator = (ClapTrap &toequalize)
+{
+	hp = toequalize.get_hp();
+	egypts = toequalize.get_egypts();
+	atkdmg = toequalize.get_atkdmg();
+	return(*this);
+}
+	
 void ClapTrap::attack(std::string const & target)
 {
 	if (hp > 0 && egypts > 0)
@@ -61,12 +69,19 @@ void ClapTrap::attack(std::string const & target)
 void ClapTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "ClapTrap " << name << " took " << amount << " points of damage" << std::endl;
+	if (!hp)
+	{
+		std::cout << "         but " << name << " was already dead, so no one cares." << std::endl;
+		return ;
+	}
 	hp -= amount;
 	if (hp <= 0)
+	{
+		hp = 0;
 		std::cout << "         " << name << " died." << std::endl;
+	}
 	else
 		std::cout << "         " << name << " has " << hp << " HP left." << std::endl;
-	hp = 0;
 }
 
 void ClapTrap::beRepaired(unsigned int amount)

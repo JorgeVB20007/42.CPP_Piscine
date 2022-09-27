@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/18 17:14:30 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/27 22:00:45 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,13 +17,9 @@
 
 class ScavTrap : public ClapTrap
 {
-	private:
-/*		std::string name;
-		int hp;
-		int egypts;
-		int atkdmg;*/
 	public:
 		ScavTrap(std::string _name);
+		ScavTrap();
 		~ScavTrap();
 		void attack(std::string const & target);
 		void guardGate();
