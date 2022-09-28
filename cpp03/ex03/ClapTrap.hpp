@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 21:23:10 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 14:45:02 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,8 +39,5 @@ class ClapTrap
 		void set_egypts(int value);
 		void set_atkdmg(int value);
 };
-
-
-
 
 #endif

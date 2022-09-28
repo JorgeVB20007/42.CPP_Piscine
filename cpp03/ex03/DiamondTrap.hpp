@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 17:27:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:08:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ class DiamondTrap : public FragTrap, public ScavTrap
 		DiamondTrap();
 		DiamondTrap(std::string _name);
 		DiamondTrap(std::string _name, int _hp, int _egypts, int _atkdmg);
+		DiamondTrap & operator = (DiamondTrap &toequalize);
 		~DiamondTrap();
 		void	whoAmI();
 		using ScavTrap::attack;

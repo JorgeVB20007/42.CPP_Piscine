@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:22:23 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 20:51:30 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:10:11 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,6 +34,14 @@ DiamondTrap::DiamondTrap(std::string _name, int _hp, int _egypts, int _atkdmg): 
 DiamondTrap::~DiamondTrap()
 {
 	std::cout << "DiamondTrap destructor called." << std::endl;
+}
+
+DiamondTrap & DiamondTrap::operator = (DiamondTrap &toequalize)
+{
+	ClapTrap::set_hp(toequalize.get_hp());
+	ClapTrap::set_egypts(toequalize.get_egypts());
+	ClapTrap::set_atkdmg(toequalize.get_atkdmg());
+	return(*this);
 }
 
 void	DiamondTrap::whoAmI()

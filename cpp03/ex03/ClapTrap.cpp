@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 21:25:13 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 14:45:02 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ ClapTrap & ClapTrap::operator = (ClapTrap &toequalize)
 	atkdmg = toequalize.get_atkdmg();
 	return(*this);
 }
-	
+
 void ClapTrap::attack(std::string const & target)
 {
 	if (hp > 0 && egypts > 0)
