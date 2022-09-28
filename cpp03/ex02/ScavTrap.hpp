@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 22:01:35 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:19:29 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,7 @@ class ScavTrap : public ClapTrap
 		ScavTrap(std::string _name);
 		ScavTrap();
 		~ScavTrap();
+		ScavTrap & operator = (ScavTrap &toequalize);
 		void attack(std::string const & target);
 		void guardGate();
 };

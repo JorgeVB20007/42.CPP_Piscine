@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 21:57:39 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:20:24 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,6 +25,14 @@ ScavTrap::ScavTrap(std::string _name): ClapTrap(_name, 100, 50, 20)
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called." << std::endl;
+}
+
+ScavTrap & ScavTrap::operator = (ScavTrap &toequalize)
+{
+	ClapTrap::set_hp(toequalize.get_hp());
+	ClapTrap::set_egypts(toequalize.get_egypts());
+	ClapTrap::set_atkdmg(toequalize.get_atkdmg());
+	return(*this);
 }
 
 void ScavTrap::attack(std::string const & target)

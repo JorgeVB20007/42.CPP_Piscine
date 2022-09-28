@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 22:50:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 21:57:25 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 15:24:43 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,7 @@ void FragTrap::attack(std::string const & target)
 	set_egypts(get_egypts() - 1);
 }
 
-
+/*
 void FragTrap::takeDamage(unsigned int amount)
 {
 	std::cout << "FragTrap " << get_name() << " took " << amount << " points of damage" << std::endl;
@@ -67,4 +67,4 @@ void FragTrap::beRepaired(unsigned int amount)
 		std::cout << "FragTrap " << get_name() << " revived with " << amount << " HP" << std::endl;
 	set_hp(get_hp() + amount);
 	std::cout << "         " << get_name() << " has " << get_hp() << " HP left." << std::endl;
-}
+}*/
