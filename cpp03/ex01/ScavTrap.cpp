@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/28 15:20:24 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:31:47 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,22 +29,22 @@ ScavTrap::~ScavTrap()
 
 ScavTrap & ScavTrap::operator = (ScavTrap &toequalize)
 {
-	ClapTrap::set_hp(toequalize.get_hp());
-	ClapTrap::set_egypts(toequalize.get_egypts());
-	ClapTrap::set_atkdmg(toequalize.get_atkdmg());
+	ClapTrap::hp = toequalize.hp;
+	ClapTrap::egypts = toequalize.egypts;
+	ClapTrap::atkdmg = toequalize.atkdmg;
 	return(*this);
 }
 
 void ScavTrap::attack(std::string const & target)
 {
-	if (get_hp() > 0 && get_egypts() > 0)
-		std::cout << "ScavTrap " << get_name() << " attacked " << target << ", causing " << get_atkdmg() << " points of damage!" << std::endl;
-	set_egypts(get_egypts() - 1);
+	if (hp > 0 && egypts > 0)
+		std::cout << "ScavTrap " << name << " attacked " << target << ", causing " << atkdmg << " points of damage!" << std::endl;
+	egypts--;
 }
 
 void ScavTrap::guardGate()
 {
-	std::cout << "ScavTrap " << get_name() << " has entered Gate keeper mode." << std::endl;
+	std::cout << "ScavTrap " << name << " has entered Gate keeper mode." << std::endl;
 }
 
 

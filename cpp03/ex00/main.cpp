@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:14:02 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/16 20:31:59 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/29 17:41:40 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 
 int main()
 {
-	ClapTrap clap("Mario");
+	ClapTrap clap("\033[0;31mMario\033[0m");	//? "Mario", but in red.
 
 	clap.attack("Goomba");
 	clap.takeDamage(3);

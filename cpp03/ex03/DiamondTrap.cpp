@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:22:23 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/28 15:10:11 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/09/28 20:33:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,19 +38,19 @@ DiamondTrap::~DiamondTrap()
 
 DiamondTrap & DiamondTrap::operator = (DiamondTrap &toequalize)
 {
-	ClapTrap::set_hp(toequalize.get_hp());
-	ClapTrap::set_egypts(toequalize.get_egypts());
-	ClapTrap::set_atkdmg(toequalize.get_atkdmg());
+	ClapTrap::hp= toequalize.hp;
+	ClapTrap::egypts = toequalize.egypts;
+	ClapTrap::atkdmg = toequalize.atkdmg;
 	return(*this);
 }
 
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap My name is " << name << std::endl;
-	std::cout << "DiamondTrap But my clap_name is " << get_name() << std::endl;
+	std::cout << "DiamondTrap But my clap_name is " << name << std::endl;
 /*	std::cout << "-- More info --" << std::endl;
-	std::cout << "- HP: " << get_hp() << std::endl;
-	std::cout << "- EP: " << get_egypts() << std::endl;
-	std::cout << "- ATK: " << get_atkdmg() << std::endl;*/
+	std::cout << "- HP: " << hp << std::endl;
+	std::cout << "- EP: " << egypts << std::endl;
+	std::cout << "- ATK: " << atkdmg << std::endl;*/
 }
 
