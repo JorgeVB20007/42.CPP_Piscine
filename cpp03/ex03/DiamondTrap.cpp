@@ -47,7 +47,7 @@ DiamondTrap & DiamondTrap::operator = (DiamondTrap &toequalize)
 void	DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap My name is " << name << std::endl;
-	std::cout << "DiamondTrap But my clap_name is " << name << std::endl;
+	std::cout << "DiamondTrap But my clap_name is " << ClapTrap::name << std::endl;
 /*	std::cout << "-- More info --" << std::endl;
 	std::cout << "- HP: " << hp << std::endl;
 	std::cout << "- EP: " << egypts << std::endl;
