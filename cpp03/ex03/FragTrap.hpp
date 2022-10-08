@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 22:50:09 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 21:31:43 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:37:31 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,8 @@ class FragTrap : virtual public ClapTrap
 		FragTrap(std::string);
 		FragTrap();
 		~FragTrap();
-		FragTrap & operator = (FragTrap &toequalize);
+		FragTrap(const FragTrap &tocopy);
+		FragTrap & operator = (const FragTrap &toequalize);
 		void highFivesGuys(void);
 		void attack(std::string const & target);
 };

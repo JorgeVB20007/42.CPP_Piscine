@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 18:48:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/29 17:42:17 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/08 19:56:59 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ class ClapTrap
 		ClapTrap();
 		ClapTrap(std::string _name);
 		ClapTrap(std::string _name, int _hp, int _egypts, int _atkdmg);
+		ClapTrap(const ClapTrap &tocopy);
 		~ClapTrap();
 		ClapTrap & operator = (ClapTrap &toequalize);
 		void attack(std::string const & target);

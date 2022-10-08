@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 20:14:02 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/27 20:58:15 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/02 19:16:26 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@ int main()
 	ScavTrap scav("\033[0;32mLuigi\033[0m");	//? "Mario", "Luigi", "Wario" & Peach, but colorful.
 	FragTrap frag("\033[0;33mWario\033[0m");
 	DiamondTrap diamond("\033[0;95mPeach\033[0m");
+//	DiamondTrap diamond(dmnd);
 
 	clap.attack("Goomba");
 	clap.takeDamage(3);

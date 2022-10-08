@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/18 22:50:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/28 20:17:17 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/08 18:37:39 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,13 @@ FragTrap::~FragTrap()
 	std::cout << "FragTrap destructor called." << std::endl;
 }
 
-FragTrap & FragTrap::operator = (FragTrap &toequalize)
+FragTrap::FragTrap(const FragTrap &tocopy): ClapTrap(tocopy)
+{
+	std::cout << "FragTrap copy constructor called." << std::endl;
+	*this = tocopy;
+}
+
+FragTrap & FragTrap::operator = (const FragTrap &toequalize)
 {
 	ClapTrap::hp = toequalize.hp;
 	ClapTrap::egypts = toequalize.egypts;
