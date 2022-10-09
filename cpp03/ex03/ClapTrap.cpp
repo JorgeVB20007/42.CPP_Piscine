@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/08 18:35:38 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/09 22:12:28 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,19 +40,20 @@ ClapTrap::ClapTrap(std::string _name, int _hp, int _egypts, int _atkdmg)
 	std::cout << "ClapTrap other constructor called." << std::endl;
 }
 
-ClapTrap::~ClapTrap()
-{
-	std::cout << "ClapTrap destructor called." << std::endl;
-}
-
 ClapTrap::ClapTrap(const ClapTrap &tocopy)
 {
 	std::cout << "ClapTrap copy constructor called." << std::endl;
 	*this = tocopy;
 }
 
+ClapTrap::~ClapTrap()
+{
+	std::cout << "ClapTrap destructor called." << std::endl;
+}
+
 ClapTrap & ClapTrap::operator = (const ClapTrap &toequalize)
 {
+	name = toequalize.name;
 	hp = toequalize.hp;
 	egypts = toequalize.egypts;
 	atkdmg = toequalize.atkdmg;

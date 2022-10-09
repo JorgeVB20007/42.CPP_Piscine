@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/09/29 17:27:46 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/09 22:00:09 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,13 +22,20 @@ ScavTrap::ScavTrap(std::string _name): ClapTrap(_name, 100, 50, 20)
 	std::cout << "ScavTrap constructor called." << std::endl;
 }
 
+ScavTrap::ScavTrap(const ScavTrap &tocopy)
+{
+	std::cout << "ScavTrap copy constructor called." << std::endl;
+	*this = tocopy;
+}
+
 ScavTrap::~ScavTrap()
 {
 	std::cout << "ScavTrap destructor called." << std::endl;
 }
 
-ScavTrap & ScavTrap::operator = (ScavTrap &toequalize)
+ScavTrap & ScavTrap::operator = (const ScavTrap &toequalize)
 {
+	ClapTrap::name = toequalize.name;
 	ClapTrap::hp = toequalize.hp;
 	ClapTrap::egypts = toequalize.egypts;
 	ClapTrap::atkdmg = toequalize.atkdmg;

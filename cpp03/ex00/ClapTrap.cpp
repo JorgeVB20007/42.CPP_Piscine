@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/16 19:04:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/08 19:56:14 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/09 22:37:12 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ ClapTrap::ClapTrap()
 	std::cout << "ClapTrap default constructor called." << std::endl;
 }
 
-ClapTrap::ClapTrap(const ClapTrap &tocopy)
+ClapTrap::ClapTrap(ClapTrap &tocopy)
 {
 	std::cout << "ClapTrap copy constructor called." << std::endl;
 	*this = tocopy;
@@ -43,6 +43,7 @@ ClapTrap::~ClapTrap()
 
 ClapTrap & ClapTrap::operator = (ClapTrap &toequalize)
 {
+	name = toequalize.get_name();
 	hp = toequalize.get_hp();
 	egypts = toequalize.get_egypts();
 	atkdmg = toequalize.get_atkdmg();
