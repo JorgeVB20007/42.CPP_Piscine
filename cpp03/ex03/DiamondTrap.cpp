@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/09/20 19:22:23 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/02 19:29:28 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/10 17:42:44 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -55,6 +55,8 @@ void	DiamondTrap::whoAmI()
 {
 	std::cout << "DiamondTrap My name is " << name << std::endl;
 	std::cout << "DiamondTrap But my clap_name is " << ClapTrap::name << std::endl;
+
+//?	Uncomment for testing if requested.
 /*	std::cout << "-- More info --" << std::endl;
 	std::cout << "- HP: " << hp << std::endl;
 	std::cout << "- EP: " << egypts << std::endl;

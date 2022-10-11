@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/01 19:11:20 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:37:05 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,13 @@ Cat & Cat::operator = (Cat &toequalize)
 	return(*this);
 }
 
-void Cat::makeSound()
+void Cat::makeSound() const
 {
 	std::cout << "Meow!" << std::endl;
 }
-
-std::string Cat::getType()
+/*
+const std::string Cat::getType()
 {
 	return("Cat");
 }
+*/

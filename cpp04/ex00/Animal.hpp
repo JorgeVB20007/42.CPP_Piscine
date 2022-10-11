@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/01 19:03:51 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:37:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,9 +22,11 @@ class Animal
 	public:
 		Animal();
 		Animal(std::string _type);
+		Animal(Animal &tocopy);
 		~Animal();
 		Animal & operator = (Animal &toequalize);
-		void makeSound();
+		virtual void makeSound() const;
+		const std::string getType() const;
 };
 
 #endif

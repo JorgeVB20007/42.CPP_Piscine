@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/01 18:37:42 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/10/11 20:39:20 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -57,7 +57,7 @@ $(NAME): $(OBJ_FILES_INFOLDER)
 
 clean:
 			@echo "$(COLOR_CYAN)- Cleaning objects.$(COLOR_RESET)"
-			@rm -rf $(OBJS_DIR)
+			@rm -rf $(OBJ_FILES_INFOLDER)
 
 fclean:		clean
 			@echo "$(COLOR_CYAN)- Cleaning executable:$(COLOR_BLUE)" $(NAME)"$(COLOR_RESET)""."

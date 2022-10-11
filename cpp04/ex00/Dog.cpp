@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:29 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/01 19:10:59 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:37:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,12 +29,12 @@ Dog & Dog::operator = (Dog &toequalize)
 	return(*this);
 }
 
-void Dog::makeSound()
+void Dog::makeSound() const
 {
 	std::cout << "Woof!" << std::endl;
 }
-
-std::string Dog::getType()
+/*
+const std::string Dog::getType()
 {
 	return("Dog");
-}
+}*/

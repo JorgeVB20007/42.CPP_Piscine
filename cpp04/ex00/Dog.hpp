@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:32 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/01 19:13:40 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 20:37:32 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,10 +19,11 @@ class Dog: public Animal
 {
 	public:
 		Dog();
+		Dog(Dog &tocopy);
 		~Dog();
 		Dog & operator = (Dog &toequalize);
-		const void makeSound();
-		const std::string getType();
+		virtual void makeSound() const;
+//		const std::string getType();
 };
 
 #endif
