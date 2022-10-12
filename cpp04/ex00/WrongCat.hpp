@@ -1,35 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 21:06:57 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/01 18:03:19 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/11 20:37:26 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#ifndef WrongCat_HPP
+# define WrongCat_HPP
 
-Cat::Cat()
-{
-	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
-}
+#include "WrongAnimal.hpp"
 
-Cat::~Cat()
+class WrongCat: public WrongAnimal
 {
-	std::cout << "Cat  --  Default destructor called." << std::endl;
-}
+	public:
+		WrongCat();
+		WrongCat(WrongCat &tocopy);
+		~WrongCat();
+		WrongCat & operator = (WrongCat &toequalize);
+		/*virtual*/ void makeSound() const;
+//		const std::string getType();
+};
 
-Cat & Cat::operator = (Cat &toequalize)
-{
-	type = toequalize.type;
-	return(*this);
-}
-
-void Cat::makeSound() const
-{
-	std::cout << "Meow!" << std::endl;
-}
+#endif

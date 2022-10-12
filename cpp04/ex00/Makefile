@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/11 20:39:20 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/10/12 18:42:40 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -19,12 +19,16 @@ COLOR_CYAN = \033[0;36m
 SRCS =	Animal.cpp	\
 		Cat.cpp	\
 		Dog.cpp	\
+		WrongAnimal.cpp	\
+		WrongCat.cpp	\
 		main.cpp
 
 SRCS_DIR = ./
 
 INCLUDE =	Animal.hpp	\
 			Cat.hpp	\
+			WrongAnimal.hpp	\
+			WrongCat.hpp	\
 			Dog.hpp
 
 INCLUDE_DIR = ./
@@ -35,7 +39,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = traps
+NAME = fauna
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
@@ -57,7 +61,7 @@ $(NAME): $(OBJ_FILES_INFOLDER)
 
 clean:
 			@echo "$(COLOR_CYAN)- Cleaning objects.$(COLOR_RESET)"
-			@rm -rf $(OBJ_FILES_INFOLDER)
+			@rm -rf $(OBJS_DIR)
 
 fclean:		clean
 			@echo "$(COLOR_CYAN)- Cleaning executable:$(COLOR_BLUE)" $(NAME)"$(COLOR_RESET)""."

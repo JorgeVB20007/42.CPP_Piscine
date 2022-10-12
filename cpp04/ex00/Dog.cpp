@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:29 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 20:37:10 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:07:01 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,12 @@
 Dog::Dog()
 {
 	type = "Dog";
-	std::cout << "Dog - Default constructor called.";
+	std::cout << "Dog  --  Default constructor called." << std::endl;
 }
 
 Dog::~Dog()
 {
-	std::cout << "Dog - Default destructor called.";
+	std::cout << "Dog  --  Default destructor called." << std::endl;
 }
 
 Dog & Dog::operator = (Dog &toequalize)
@@ -33,8 +33,3 @@ void Dog::makeSound() const
 {
 	std::cout << "Woof!" << std::endl;
 }
-/*
-const std::string Dog::getType()
-{
-	return("Dog");
-}*/
