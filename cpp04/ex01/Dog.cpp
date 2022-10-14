@@ -1,41 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Dog.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 18:34:53 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/01 18:03:29 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/14 18:57:54 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Dog.hpp"
 
-Cat::Cat()
+Dog::Dog()
 {
-	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
+	mind = new Brain();
+	type = "Dog";
+	std::cout << "Dog  --  Default constructor called." << std::endl;
 }
 
-Cat::Cat(Cat &tocopy)
+Dog::Dog(Dog &tocopy)
 {
 	*this = tocopy;
-	std::cout << "Cat  --  Copy constructor called." << std::endl;
+	mind = new Brain(*tocopy.mind);
+	std::cout << "Dog  --  Copy constructor called." << std::endl;
 }
 
-Cat::~Cat()
+Dog::~Dog()
 {
-	std::cout << "Cat  --  Default destructor called." << std::endl;
+	delete mind;
+	std::cout << "Dog  --  Default destructor called." << std::endl;
 }
 
-Cat & Cat::operator = (Cat &toequalize)
+Dog & Dog::operator = (Dog &toequalize)
 {
 	type = toequalize.type;
 	return(*this);
 }
 
-void Cat::makeSound() const
+void Dog::makeSound() const
 {
-	std::cout << "Meow!" << std::endl;
+	std::cout << "Woof!" << std::endl;
 }

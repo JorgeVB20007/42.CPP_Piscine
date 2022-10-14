@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   WrongCat.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 18:34:53 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/11 21:06:57 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "WrongCat.hpp"
 
-Cat::Cat()
+WrongCat::WrongCat()
 {
-	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
+	type = "WrongCat";
+	std::cout << "WrongCat  --  Default constructor called." << std::endl;
 }
 
-Cat::Cat(Cat &tocopy)
+WrongCat::~WrongCat()
 {
-	*this = tocopy;
-	std::cout << "Cat  --  Copy constructor called." << std::endl;
+	std::cout << "WrongCat  --  Default destructor called." << std::endl;
 }
 
-Cat::~Cat()
-{
-	std::cout << "Cat  --  Default destructor called." << std::endl;
-}
-
-Cat & Cat::operator = (Cat &toequalize)
+WrongCat & WrongCat::operator = (WrongCat &toequalize)
 {
 	type = toequalize.type;
 	return(*this);
 }
 
-void Cat::makeSound() const
+void WrongCat::makeSound() const
 {
-	std::cout << "Meow!" << std::endl;
+	std::cout << "Meow but wrong!" << std::endl;
 }

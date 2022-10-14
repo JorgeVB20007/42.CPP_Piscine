@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:29 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 21:07:01 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/14 18:34:49 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,12 @@ Dog::Dog()
 {
 	type = "Dog";
 	std::cout << "Dog  --  Default constructor called." << std::endl;
+}
+
+Dog::Dog(Dog &tocopy)
+{
+	*this = tocopy;
+	std::cout << "Dog  --  Copy constructor called." << std::endl;
 }
 
 Dog::~Dog()

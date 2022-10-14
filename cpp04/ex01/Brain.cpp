@@ -1,41 +1,46 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Cat.cpp                                            :+:      :+:    :+:   */
+/*   Brain.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 18:34:53 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/14 18:38:48 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/14 19:21:39 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Cat.hpp"
+#include "Brain.hpp"
 
-Cat::Cat()
+Brain::Brain()
 {
-	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
+	std::cout << "Brain -- Default constructor called." << std::endl;
 }
 
-Cat::Cat(Cat &tocopy)
+Brain::Brain(Brain &tocopy)
 {
 	*this = tocopy;
-	std::cout << "Cat  --  Copy constructor called." << std::endl;
+	std::cout << "Brain -- Copy constructor called." << std::endl;
 }
 
-Cat::~Cat()
+Brain::~Brain()
 {
-	std::cout << "Cat  --  Default destructor called." << std::endl;
+	std::cout << "Brain -- Default destructor called." << std::endl;
 }
 
-Cat & Cat::operator = (Cat &toequalize)
+Brain & Brain::operator = (Brain &toequalize)
 {
-	type = toequalize.type;
+	int a = 0;
+
+	while (a < 100)
+	{
+		ideas[a] = toequalize.ideas[a];
+		a++;
+	}
+
+
+//	ideas = toequalize.ideas;
 	return(*this);
 }
 
-void Cat::makeSound() const
-{
-	std::cout << "Meow!" << std::endl;
-}
+
