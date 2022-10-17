@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 18:57:48 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/17 21:55:04 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,27 +14,32 @@
 
 Cat::Cat()
 {
+	if (INFOS)
+		std::cout << "Cat  --  Default constructor called." << std::endl;
 	mind = new Brain();
 	type = "Cat";
-	std::cout << "Cat  --  Default constructor called." << std::endl;
 }
 
 Cat::Cat(Cat &tocopy)
 {
+	if (INFOS)
+		std::cout << "Cat  --  Copy constructor called." << std::endl;
 	*this = tocopy;
-	mind = new Brain(*tocopy.mind);
-	std::cout << "Cat  --  Copy constructor called." << std::endl;
 }
 
 Cat::~Cat()
 {
+	if (INFOS)
+		std::cout << "Cat  --  Default destructor called." << std::endl;
 	delete mind;
-	std::cout << "Cat  --  Default destructor called." << std::endl;
 }
 
 Cat & Cat::operator = (Cat &toequalize)
 {
+	if (INFOS)
+		std::cout << "Cat  --  Assignation operator called." << std::endl;
 	type = toequalize.type;
+	mind = new Brain(*toequalize.mind);
 	return(*this);
 }
 

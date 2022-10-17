@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 18:14:42 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/17 21:57:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,6 +16,8 @@
 #include <iostream>
 #include "Brain.hpp"
 
+#define INFOS 1
+
 class Animal
 {
 	protected:
@@ -24,7 +26,7 @@ class Animal
 		Animal();
 		Animal(std::string _type);
 		Animal(const Animal &tocopy);
-		~Animal();
+		virtual ~Animal();
 		Animal & operator = (const Animal &toequalize);
 		virtual void makeSound() const;
 		const std::string getType() const;
