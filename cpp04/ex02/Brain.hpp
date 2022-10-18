@@ -1,32 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Brain.hpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 21:24:27 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/14 17:47:44 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/17 18:52:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef BRAIN_HPP
+# define BRAIN_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-class WrongAnimal
+class Brain
 {
 	protected:
-		std::string type;
+		std::string ideas[100];
 	public:
-		WrongAnimal();
-		WrongAnimal(std::string _type);
-		WrongAnimal(const WrongAnimal &tocopy);
-		~WrongAnimal();
-		WrongAnimal & operator = (const WrongAnimal &toequalize);
-		/*virtual*/ void makeSound() const;
-		const std::string getType() const;
+		Brain();
+		Brain(Brain &tocopy);
+		~Brain();
+		Brain & operator = (Brain &toequalize);
+		void think(int index, std::string newidea);
+		std::string recall(int index);
 };
 
 #endif

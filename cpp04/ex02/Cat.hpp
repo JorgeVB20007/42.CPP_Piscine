@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Cat.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 21:24:27 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/01 18:03:19 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/18 18:34:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef CAT_HPP
+# define CAT_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-class WrongAnimal
+class Cat: public Animal
 {
-	protected:
-		std::string type;
+	private:
+		Brain *mind;
 	public:
-		WrongAnimal();
-		WrongAnimal(std::string _type);
-		WrongAnimal(const WrongAnimal &tocopy);
-		~WrongAnimal();
-		WrongAnimal & operator = (const WrongAnimal &toequalize);
-		/*virtual*/ void makeSound() const;
-		const std::string getType() const;
+		Cat();
+		Cat(Cat &tocopy);
+		virtual ~Cat();
+		Cat & operator = (Cat &toequalize);
+		virtual void makeSound() const;
+		void cat_think(int index, std::string newidea);
+		std::string cat_recall(int index);
+//		const std::string getType();
 };
 
 #endif

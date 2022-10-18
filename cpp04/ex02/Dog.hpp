@@ -1,32 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongAnimal.hpp                                         :+:      :+:    :+:   */
+/*   Dog.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/11 21:24:27 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/01 18:03:32 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/17 21:05:38 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGANIMAL_HPP
-# define WRONGANIMAL_HPP
+#ifndef DOG_HPP
+# define DOG_HPP
 
-#include <iostream>
+#include "Animal.hpp"
 
-class WrongAnimal
+class Dog: public Animal
 {
-	protected:
-		std::string type;
+	private:
+		Brain *mind;
 	public:
-		WrongAnimal();
-		WrongAnimal(std::string _type);
-		WrongAnimal(const WrongAnimal &tocopy);
-		~WrongAnimal();
-		WrongAnimal & operator = (const WrongAnimal &toequalize);
-		/*virtual*/ void makeSound() const;
-		const std::string getType() const;
+		Dog();
+		Dog(Dog &tocopy);
+		virtual ~Dog();
+		Dog & operator = (Dog &toequalize);
+		virtual void makeSound() const;
+		void dog_think(int index, std::string newidea);
+		std::string dog_recall(int index);
+//		const std::string getType();
 };
 
 #endif
