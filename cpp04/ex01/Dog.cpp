@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:29 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/17 21:55:31 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/18 18:14:58 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,6 +24,7 @@ Dog::Dog(Dog &tocopy)
 {
 	if (INFOS)
 		std::cout << "Dog  --  Copy constructor called." << std::endl;
+	mind = NULL;
 	*this = tocopy;
 }
 
@@ -39,6 +40,8 @@ Dog & Dog::operator = (Dog &toequalize)
 	if (INFOS)
 		std::cout << "Dog  --  Assignation operator called." << std::endl;
 	type = toequalize.type;
+	if (mind != NULL)
+		delete mind;
 	mind = new Brain(*toequalize.mind);
 	return(*this);
 }
