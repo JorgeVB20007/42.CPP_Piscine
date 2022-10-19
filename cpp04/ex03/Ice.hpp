@@ -1,29 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   WrongCat.hpp                                       :+:      :+:    :+:   */
+/*   Ice.hpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/01 18:03:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:48:49 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/19 20:33:51 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef WRONGCAT_HPP
-# define WRONGCAT_HPP
+#ifndef ICE_HPP
+# define ICE_HPP
 
-#include "WrongAnimal.hpp"
-
-class WrongCat: public WrongAnimal
-{
-	public:
-		WrongCat();
-		WrongCat(WrongCat &tocopy);
-		~WrongCat();
-		WrongCat & operator = (WrongCat &toequalize);
-		/*virtual*/ void makeSound() const;
-//		const std::string getType();
-};
 
 #endif

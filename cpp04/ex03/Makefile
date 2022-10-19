@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/14 18:57:09 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/10/19 16:38:12 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,22 +16,19 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	Animal.cpp	\
-		Cat.cpp	\
-		Dog.cpp	\
-		Brain.cpp	\
-		WrongAnimal.cpp	\
-		WrongCat.cpp	\
+SRCS =		\
+			\
+			\
+			\
 		main.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =	Animal.hpp	\
-			Cat.hpp	\
-			Brain.hpp	\
-			WrongAnimal.hpp	\
-			WrongCat.hpp	\
-			Dog.hpp
+INCLUDE =		\
+				\
+				\
+				\
+			
 
 INCLUDE_DIR = ./
 
@@ -41,7 +38,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = fauna
+NAME = physics
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
