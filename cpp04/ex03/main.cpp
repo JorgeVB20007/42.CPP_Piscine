@@ -6,9 +6,15 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:22:15 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:24:33 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:30:11 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#include "Cure.hpp"
+#include "Ice.hpp"
+#include "ICharacter.hpp"
+#include "IMateriaSource.hpp"
+
 
 int main()
 {

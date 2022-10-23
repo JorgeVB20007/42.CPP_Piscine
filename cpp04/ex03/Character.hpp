@@ -1,26 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   Character.hpp                                      :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 18:30:30 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/23 21:29:00 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
+#ifndef CHARACTER_HPP
+# define CHARACTER_HPP
 
+#include "ICharacter.hpp"
 #include "AMateria.hpp"
 
-class IMateriaSource
+class Character: 
 {
 	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
+		Character();
+		Character(std::string _name);
+		Character(Character &tocopy);
+		~Character();
+		Character & operator = (Character &toequalize);
+
+		virtual ~ICharacter() {}
+		virtual std::string const & getName() const;
+		virtual void equip(AMateria* m);
+		virtual void unequip(int idx);
+		virtual void use(int idx, ICharacter& target);
+	private:
+		std::string name;
+		AMateria (*slots)[4];
 };
 
 #endif

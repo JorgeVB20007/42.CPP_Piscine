@@ -6,12 +6,17 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:23:12 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/23 18:52:05 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef ICHARACTER_HPP
 # define ICHARACTER_HPP
+
+//#include "AMateria.hpp"
+#include <iostream>
+
+class AMateria;
 
 class ICharacter
 {

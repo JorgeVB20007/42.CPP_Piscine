@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/19 16:38:12 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/10/23 18:41:15 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,19 +16,20 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =		\
-			\
-			\
-			\
+SRCS =	AMateria.cpp \
+		Cure.cpp \
+		ICharacter.cpp \
+		IMateriaSource.cpp \
+		Ice.cpp \
 		main.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =		\
-				\
-				\
-				\
-			
+INCLUDE =	IMateriaSource.hpp \
+			AMateria.hpp \
+			Cure.hpp \
+			ICharacter.hpp \
+			Ice.hpp
 
 INCLUDE_DIR = ./
 

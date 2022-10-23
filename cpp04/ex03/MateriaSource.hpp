@@ -1,26 +1,16 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.hpp                                 :+:      :+:    :+:   */
+/*   MateriaSource.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 18:30:30 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/23 18:53:09 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef IMATERIASOURCE_HPP
-# define IMATERIASOURCE_HPP
-
-#include "AMateria.hpp"
-
-class IMateriaSource
-{
-	public:
-		virtual ~IMateriaSource() {}
-		virtual void learnMateria(AMateria*) = 0;
-		virtual AMateria* createMateria(std::string const & type) = 0;
-};
+#ifndef MATERIASOURCE_HPP
+# define MATERIASOURCE_HPP
 
 #endif
