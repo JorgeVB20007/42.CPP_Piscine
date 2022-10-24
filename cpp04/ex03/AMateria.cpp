@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:27:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 22:13:39 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/24 20:41:54 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -52,7 +52,7 @@ std::string const & AMateria::getType() const
 	return (_type);
 }
 
-void use(ICharacter& target)
+void AMateria::use(ICharacter& target)
 {
 	std::cout << "* confuses " << target.getName() << " *" << std::endl;
 }
