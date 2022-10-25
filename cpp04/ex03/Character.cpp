@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:51:30 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 22:13:19 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/25 23:05:22 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,19 +49,22 @@ Character & Character::operator = (Character &toequalize)
 {
 	if (NOTIFS)
 		std::cout << "Character assignation operator called." << std::endl;
-	name = tocopy.getName();
+	name = toequalize.getName();
 	int a = 0;
 	while (a < 4)
-		slots[a] = tocopy.slots[a++];
+	{
+		slots[a] = toequalize.slots[a];
+		a++;
+	}
 	return (*this);
 }
 
-virtual std::string const & Character::getName() const
+std::string const & Character::getName() const
 {
 	return (name);
 }
 
-virtual void Character::equip(AMateria* m)
+void Character::equip(AMateria* m)
 {
 	int a = 0;
 
@@ -70,7 +73,7 @@ virtual void Character::equip(AMateria* m)
 		if (!slots[a])
 		{
 			slots[a] = m;
-			std::cout << m.getType() << " equipped on slot " << a << std::endl;
+			std::cout << m->getType() << " equipped on slot " << a << std::endl;
 			a = 41;
 		}
 		a++;
@@ -79,18 +82,18 @@ virtual void Character::equip(AMateria* m)
 		std::cout << name << "'s inventory is full!" << std::endl;
 }
 
-virtual void Character::unequip(int idx)
+void Character::unequip(int idx)
 {
 	if (idx >= 4 || idx < 0)
 	{
 		std::cout << "Index " << idx << " is not between 0 and 3." << std::endl;
 		return ;
 	}
-	std::cout << slots[idx].getType() << " unequipped." << std::endl;
+	std::cout << slots[idx]->getType() << " unequipped." << std::endl;
 	slots[idx] = NULL;
 }
 
-virtual void Character::use(int idx, ICharacter& target)
+void Character::use(int idx, ICharacter& target)
 {
-	slots[idx].AMateria::use(target);
+	slots[idx]->use(target);
 }

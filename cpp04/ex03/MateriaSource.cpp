@@ -6,13 +6,13 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:53:20 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/24 20:59:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/25 23:02:35 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "MateriaSource.hpp"
 
-virtual void learnMateria(AMateria *tolearn)
+void MateriaSource::learnMateria(AMateria *tolearn)
 {
 	int a = 0;
 
@@ -21,22 +21,31 @@ virtual void learnMateria(AMateria *tolearn)
 		if (!materias[a])
 		{
 			materias[a] = tolearn;
-			std::cout << tolearn.getType() << " equipped on slot " << a << std::endl;
+			std::cout << tolearn->getType() << " equipped on slot " << a << std::endl;
 			a = 41;
 		}
 		a++;
 	}
 	if (a != 42)
-		std::cout << name << "'s inventory is full!" << std::endl;
+		std::cout << "Inventory is full!" << std::endl;
 }
 
-virtual AMateria *createMateria(std::string const &)
+AMateria *MateriaSource::createMateria(std::string const &type_search)
 {
-	/*
-?	createMateria(std::string const &) will return a new Materia, which will be a
-?	copy of the Materia (previously learned by the Source) which type equals the parameter.
-?	Returns 0 if the type is unknown.
-	*/
+	int a = 0;
+	AMateria *res = NULL;
+
+	while (a < 4)
+	{
+		if (type_search == materias[a]->getType())
+		{
+			res = materias[a]->clone();
+			return (res);
+		}
+		a++;
+	}
+	std::cout << "Error: Materia " << type_search << " not found." << std::endl;
+	return (0);
 }
 
 MateriaSource::MateriaSource()
@@ -52,7 +61,10 @@ MateriaSource::MateriaSource(MateriaSource &tocopy)
 	std::cout << "MateriaSource copy constructor called." << std::endl;
 	int a = 0;
 	while (a < 4)
-		materias[a] = tocopy.materias[a++];
+	{
+		materias[a] = tocopy.materias[a];
+		a++;
+	}
 }
 
 MateriaSource::~MateriaSource()
@@ -64,5 +76,12 @@ MateriaSource::~MateriaSource()
 MateriaSource & MateriaSource::operator = (MateriaSource &toequalize)
 {
 	std::cout << "MateriaSource assignation operator called." << std::endl;
+	int a = 0;
 
+	while (a < 4)
+	{
+		materias[a] = toequalize.materias[a];
+		a++;
+	}
+	return (*this);
 }
