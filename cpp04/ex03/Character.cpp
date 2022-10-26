@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:51:30 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/25 23:05:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/26 23:06:57 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -68,12 +68,17 @@ void Character::equip(AMateria* m)
 {
 	int a = 0;
 
+	if (!m)
+	{
+		std::cout << "There's nothing to equip!" << std::endl;
+		return ;
+	}
 	while (a < 4)
 	{
 		if (!slots[a])
 		{
 			slots[a] = m;
-			std::cout << m->getType() << " equipped on slot " << a << std::endl;
+			std::cout << m->getType() << " equipped on " << name << "'s slot " << a << std::endl;
 			a = 41;
 		}
 		a++;
@@ -95,5 +100,8 @@ void Character::unequip(int idx)
 
 void Character::use(int idx, ICharacter& target)
 {
-	slots[idx]->use(target);
+	if (!slots[idx])
+		std::cout << "* unsuccessfully tried to pick a weapon to attack " << target.getName() << " *" << std::endl;
+	else
+		slots[idx]->use(target);
 }

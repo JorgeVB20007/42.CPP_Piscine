@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 18:48:44 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/26 22:28:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,8 +23,8 @@ class AMateria
 		std::string _type;
 		
 	public:
-		AMateria(std::string const & type);
-		AMateria();
+		explicit AMateria(std::string const & type);
+//		AMateria();
 		AMateria(AMateria &tocopy);
 		~AMateria();
 		AMateria & operator = (AMateria &toequalize);

@@ -6,18 +6,18 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:22:24 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/24 20:40:55 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/26 23:15:50 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Ice.hpp"
 
-Ice::Ice()
+Ice::Ice(): AMateria("ice")
 {
 	std::cout << "Ice default constructor called." << std::endl;
 }
 
-Ice::Ice(Ice &tocopy)
+Ice::Ice(Ice &tocopy): AMateria("ice")
 {
 	std::cout << "Ice copy constructor called." << std::endl;
 	*this = tocopy;
@@ -40,4 +40,9 @@ AMateria* Ice::clone() const
 {
 	AMateria* ret = new Ice;
 	return (ret);
+}
+
+void Ice::use(ICharacter& target)
+{
+	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
 }
