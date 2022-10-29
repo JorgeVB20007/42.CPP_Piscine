@@ -1,13 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   IMateriaSource.cpp                                 :+:      :+:    :+:   */
+/*   Notifications.hpp                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/19 21:22:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:23:04 by jvacaris         ###   ########.fr       */
+/*   Created: 2022/10/29 19:27:17 by jvacaris          #+#    #+#             */
+/*   Updated: 2022/10/29 19:33:09 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "IMateriaSource.hpp"
+#ifndef NOTIFICATIONS_HPP
+# define NOTIFICATIONS_HPP
+
+#define NOTIFS 0
+
+#include <iostream>
+
+#endif

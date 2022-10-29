@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:53:20 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/26 22:59:24 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:38:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,8 @@ AMateria *MateriaSource::createMateria(std::string const &type_search)
 
 MateriaSource::MateriaSource()
 {
-	std::cout << "MateriaSource default constructor called." << std::endl;
+	if (NOTIFS)
+		std::cout << "MateriaSource default constructor called." << std::endl;
 	int a = 0;
 	while (a < 4)
 		materias[a++] = NULL;
@@ -58,7 +59,8 @@ MateriaSource::MateriaSource()
 
 MateriaSource::MateriaSource(MateriaSource &tocopy)
 {
-	std::cout << "MateriaSource copy constructor called." << std::endl;
+	if (NOTIFS)
+		std::cout << "MateriaSource copy constructor called." << std::endl;
 	int a = 0;
 	while (a < 4)
 	{
@@ -69,13 +71,14 @@ MateriaSource::MateriaSource(MateriaSource &tocopy)
 
 MateriaSource::~MateriaSource()
 {
-	std::cout << "MateriaSource default destructor called." << std::endl;
-
+	if (NOTIFS)
+		std::cout << "MateriaSource default destructor called." << std::endl;
 }
 
 MateriaSource & MateriaSource::operator = (MateriaSource &toequalize)
 {
-	std::cout << "MateriaSource assignation operator called." << std::endl;
+	if (NOTIFS)
+		std::cout << "MateriaSource assignation operator called." << std::endl;
 	int a = 0;
 
 	while (a < 4)

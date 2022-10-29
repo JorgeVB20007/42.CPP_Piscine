@@ -1,51 +1,51 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Ice.cpp                                            :+:      :+:    :+:   */
+/*   Rage.cpp                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:22:24 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/29 19:31:27 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/26 23:15:50 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Ice.hpp"
+#include "Rage.hpp"
 
-Ice::Ice(): AMateria("ice")
+Rage::Rage(): AMateria("rage")
 {
 	if (NOTIFS)
-		std::cout << "Ice default constructor called." << std::endl;
+		std::cout << "Rage default constructor called." << std::endl;
 }
 
-Ice::Ice(Ice &tocopy): AMateria("ice")
+Rage::Rage(Rage &tocopy): AMateria("rage")
 {
 	if (NOTIFS)
-		std::cout << "Ice copy constructor called." << std::endl;
+		std::cout << "Rage copy constructor called." << std::endl;
 	*this = tocopy;
 }
 
-Ice::~Ice()
+Rage::~Rage()
 {
 	if (NOTIFS)
-		std::cout << "Ice default destructor called." << std::endl;
+		std::cout << "Rage default destructor called." << std::endl;
 }
 
-Ice & Ice::operator = (Ice &toequalize)
+Rage & Rage::operator = (Rage &toequalize)
 {
 	if (NOTIFS)
-		std::cout << "Ice assignation operator called." << std::endl;
+		std::cout << "Rage assignation operator called." << std::endl;
 	(void)toequalize;
 	return (*this);
 }
 
-AMateria* Ice::clone() const
+AMateria* Rage::clone() const
 {
-	AMateria* ret = new Ice;
+	AMateria* ret = new Rage;
 	return (ret);
 }
 
-void Ice::use(ICharacter& target)
+void Rage::use(ICharacter& target)
 {
-	std::cout << "* shoots an ice bolt at " << target.getName() << " *" << std::endl;
+	std::cout << "* uses a rage spell against " << target.getName() << " *" << std::endl;
 }

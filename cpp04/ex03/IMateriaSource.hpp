@@ -6,13 +6,14 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/23 18:30:30 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:25:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef IMATERIASOURCE_HPP
 # define IMATERIASOURCE_HPP
 
+#include "notifications.hpp"
 #include "AMateria.hpp"
 
 class IMateriaSource

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:27:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/26 22:29:03 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:39:22 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,13 +18,6 @@ AMateria::AMateria(std::string const & type)
 		std::cout << "AMateria constructor called." << std::endl;
 	_type = type;
 }
-/*
-AMateria::AMateria()
-{
-	if (NOTIFS)
-		std::cout << "AMateria default constructor called." << std::endl;
-	_type = "???";
-}*/
 
 AMateria::AMateria(AMateria &tocopy)
 {

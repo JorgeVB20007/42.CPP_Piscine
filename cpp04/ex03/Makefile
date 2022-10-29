@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/25 23:03:05 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/10/29 19:38:51 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -18,11 +18,10 @@ COLOR_CYAN = \033[0;36m
 
 SRCS =	AMateria.cpp \
 		Cure.cpp \
-		ICharacter.cpp \
 		Character.cpp \
-		IMateriaSource.cpp \
 		MateriaSource.cpp \
 		Ice.cpp \
+		Rage.cpp \
 		main.cpp
 
 SRCS_DIR = ./

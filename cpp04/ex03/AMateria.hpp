@@ -6,16 +6,15 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/18 20:22:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/26 22:28:55 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/29 19:26:32 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef AMATERIA_HPP
 # define AMATERIA_HPP
 
-#define NOTIFS 1
-#include <iostream>
 #include "ICharacter.hpp"
+#include "notifications.hpp"
 
 class AMateria
 {
@@ -26,7 +25,7 @@ class AMateria
 		explicit AMateria(std::string const & type);
 //		AMateria();
 		AMateria(AMateria &tocopy);
-		~AMateria();
+		virtual ~AMateria();
 		AMateria & operator = (AMateria &toequalize);
 
 		std::string const & getType() const; //Returns the materia type
