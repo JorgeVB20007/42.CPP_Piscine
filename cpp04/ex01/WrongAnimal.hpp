@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/19 21:48:04 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:09:52 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class WrongAnimal
 		WrongAnimal(const WrongAnimal &tocopy);
 		~WrongAnimal();
 		WrongAnimal & operator = (const WrongAnimal &toequalize);
-		/*virtual*/ void makeSound() const;
+		void makeSound() const;
 		const std::string getType() const;
 };
 

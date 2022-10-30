@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:32 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/17 21:05:38 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:09:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,6 @@ class Dog: public Animal
 		virtual void makeSound() const;
 		void dog_think(int index, std::string newidea);
 		std::string dog_recall(int index);
-//		const std::string getType();
 };
 
 #endif

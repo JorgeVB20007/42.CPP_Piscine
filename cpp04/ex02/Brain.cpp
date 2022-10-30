@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/14 18:38:48 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/17 21:56:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:08:54 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,9 +49,6 @@ Brain & Brain::operator = (Brain &toequalize)
 		ideas[a] = toequalize.ideas[a];
 		a++;
 	}
-
-
-//	ideas = toequalize.ideas;
 	return(*this);
 }
 

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/01 18:03:34 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/14 17:09:52 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/10/30 19:16:51 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,4 +37,10 @@ int main()
 	std::cout << wrong_j->getType() << " " << std::endl;
 	wrong_j->makeSound();
 	wrong_meta->makeSound();
+
+	delete meta;
+	delete i;
+	delete j;
+	delete wrong_j;
+	delete wrong_meta;
 }
