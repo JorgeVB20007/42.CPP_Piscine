@@ -6,11 +6,16 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:27:12 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/29 19:39:22 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/05 18:45:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "AMateria.hpp"
+
+AMateria::AMateria()
+{
+	_type = "???";
+}
 
 AMateria::AMateria(std::string const & type)
 {

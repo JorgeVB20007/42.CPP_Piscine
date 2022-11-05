@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/19 21:22:15 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/29 20:24:29 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/05 20:55:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,7 +47,8 @@ int main()
 		IMateriaSource* src = new MateriaSource();
 		src->learnMateria(new Rage());
 		src->learnMateria(new Ice());
-		src->learnMateria(new Cure());
+		Cure *cureptr = new Cure();
+		src->learnMateria(cureptr);
 
 		ICharacter* you = new Character("you");
 
@@ -67,10 +68,10 @@ int main()
 		you->unequip(2);
 		you->use(2, *bob);
 		
+		delete cureptr;
 		delete bob;
 		delete you;
 		delete src;
-
 	}
 	return 0;
 }

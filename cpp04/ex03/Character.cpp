@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 19:51:30 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/10/29 19:22:20 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/05 20:55:02 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -94,7 +94,10 @@ void Character::unequip(int idx)
 		std::cout << "Index " << idx << " is not between 0 and 3." << std::endl;
 		return ;
 	}
-	std::cout << slots[idx]->getType() << " unequipped." << std::endl;
+	if (!slots[idx])
+		std::cout << "Nothing to unequip" << std::endl;
+	else
+		std::cout << slots[idx]->getType() << " unequipped." << std::endl;
 	slots[idx] = NULL;
 }
 

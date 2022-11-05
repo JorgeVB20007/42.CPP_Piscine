@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/01 21:32:54 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/03 22:32:26 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,10 +27,19 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name)
 	try
 	{
 		if (grade < 1)
-			throw 1;
+			throw Bureaucrat::GradeTooLowException();
 		else if (grade > 150)
-			throw 2;
+			throw Bureaucrat::GradeTooHighException();
 	}
+	catch (Bureaucrat::GradeTooHighException & e)
+	{
+		e.exceptionPrint();
+	}
+	catch (Bureaucrat::GradeTooLowException & e)
+	{
+		e.exceptionPrint();
+	}
+
 	//!    Missing try/catch
 }
 
