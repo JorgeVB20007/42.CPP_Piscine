@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/31 19:17:05 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/11/19 00:53:49 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,14 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	Bureaucrat.cpp \
+SRCS =	Bureaucrat.cpp	\
+		Form.cpp		\
 		main.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =	Bureaucrat.hpp
+INCLUDE =	Bureaucrat.hpp	\
+			Form.hpp
 
 INCLUDE_DIR = ./
 

@@ -6,11 +6,11 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/17 18:37:12 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/19 00:40:31 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "Bureaucrat.hpp"
+#include "Form.hpp"
 int main()
 {
 	std::cout << "Bureaucrats" << std::endl;
