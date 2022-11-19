@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/19 00:53:06 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/19 21:11:20 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 # define FORM_HPP
 
 #include "Bureaucrat.hpp"
+
+class Bureaucrat ;
 
 class Form
 {
@@ -30,8 +32,8 @@ class Form
 		Form & operator = (Form &toequalize);
 		const std::string getName();
 		int getGrade();
-		void gradeup();
-		void gradedown();
+		bool getSignatureStatus();
+		void beSigned(Bureaucrat signer);
 
 		class GradeTooHighException: public std::exception
 		{
@@ -48,6 +50,15 @@ class Form
 				void exceptionPrint()
 				{
 					std::cout << "Exception: Grade is too low!" << std::endl;
+				}
+		};
+
+		class AlreadySigned: public std::exception
+		{
+			public:
+				void exceptionPrint()
+				{
+					std::cout << "Exception: Form was already signed!" << std::endl;
 				}
 		};
 		

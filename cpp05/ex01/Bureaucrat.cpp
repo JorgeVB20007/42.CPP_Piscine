@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/17 18:35:14 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/19 21:21:59 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name)
 	}
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &tocopy)
+Bureaucrat::Bureaucrat(Bureaucrat &tocopy): name(tocopy.name)
 {
 	if (NOTIFS)
 		std::cout << "Bureaucrat Copy constructor called." << std::endl;
@@ -94,8 +94,7 @@ void Bureaucrat::gradedown()
 	{
 		if (grade + 1 > 150)
 			throw Bureaucrat::GradeTooLowException();
-		else
-			grade++;
+		grade++;
 	}
 	catch (Bureaucrat::GradeTooLowException & e)
 	{
@@ -108,3 +107,17 @@ std::ostream & operator << (std::ostream &ost, Bureaucrat &toprint)
 	ost << toprint.getName() << ", bureaucrat grade " << toprint.getGrade() << ".";
 	return (ost);
 }
+
+void Bureaucrat::signForm(Form & tosign)
+{
+	try
+	{
+		tosign.beSigned(*this);
+		std::cout << getName() << " signs " << tosign.getName() << "." << std::endl;
+	}
+	catch (Form::GradeTooHighException & e)
+	{
+		std::cout << e.exceptionPrint();
+	}
+}
+	

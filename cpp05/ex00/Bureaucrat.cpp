@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/17 18:35:14 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/19 18:16:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,7 +41,7 @@ Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name)
 	}
 }
 
-Bureaucrat::Bureaucrat(Bureaucrat &tocopy)
+Bureaucrat::Bureaucrat(Bureaucrat &tocopy): name(tocopy.name)
 {
 	if (NOTIFS)
 		std::cout << "Bureaucrat Copy constructor called." << std::endl;

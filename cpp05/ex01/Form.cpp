@@ -6,25 +6,25 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/18 21:11:39 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/19 19:39:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 
-Form::Form(): name("???")
+Form::Form(): name("Untitled"), min_grade(150)
 {
 	if (NOTIFS)
 		std::cout << "Form Default constructor called." << std::endl;
-	min_grade = 150;
+	is_signed = false;
 }
 
-Form::Form(const std::string _name, int _min_grade): name(_name)
+Form::Form(const std::string _name, const int _min_grade): name(_name), min_grade(_min_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Regular constructor called." << std::endl;
-	min_grade = _min_grade;
+	is_signed = false;
 	try
 	{
 		if (min_grade < 1)
@@ -42,7 +42,7 @@ Form::Form(const std::string _name, int _min_grade): name(_name)
 	}
 }
 
-Form::Form(Form &tocopy)
+Form::Form(Form &tocopy): name(tocopy.name), min_grade(tocopy.min_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Copy constructor called." << std::endl;
@@ -60,7 +60,7 @@ Form & Form::operator = (Form &toequalize)
 {
 	if (NOTIFS)
 		std::cout << "Form Assignation operator called." << std::endl;
-	min_grade = toequalize.getGrade();
+	is_signed = toequalize.getGrade();
 	return (*this);
 }
 
@@ -74,8 +74,29 @@ int Form::getGrade()
 	return (min_grade);
 }
 
+bool Form::getSignatureStatus()
+{
+	return (min_grade);
+}
+
+void Form::beSigned(Bureaucrat signer)
+{
+	try
+	{
+		if (min_grade > signer.getGrade())
+			throw Form::GradeTooHighException();
+		else if (is_signed)
+			throw Form::GradeTooHighException();//! custom error
+		is_signed = true;
+	}
+	catch (Bureaucrat::GradeTooHighException & e)
+	{
+		e.exceptionPrint();
+	}
+}
+
 std::ostream & operator << (std::ostream &ost, Form &toprint)
 {
-	ost << toprint.getName() << ", form required grade: " << toprint.getGrade() << ".";
+	ost << "Form name: " << toprint.getName() << " | Required grade: " << toprint.getGrade() << " | Signed: " << toprint.getSignatureStatus() << ".";
 	return (ost);
 }
