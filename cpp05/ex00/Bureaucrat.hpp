@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:32:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/17 20:08:03 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/21 16:40:28 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,18 +36,18 @@ class Bureaucrat
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				void exceptionPrint()
+				std::string exceptionPrint()
 				{
-					std::cout << "Exception: Grade is too high!" << std::endl;
+					return("Exception: Grade is too high!\n");
 				}
 		};
 
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				void exceptionPrint()
+				std::string exceptionPrint()
 				{
-					std::cout << "Exception: Grade is too low!" << std::endl;
+					return("Exception: Grade is too low!\n");
 				}
 		};
 
