@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 19:20:44 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:09:34 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,18 +22,20 @@ class Form
 	private:
 		const std::string name;
 		bool is_signed;
-		const int min_grade;
+		const int sign_grade;
+		const int exec_grade;
 	
 	public:
 		Form();
-		Form(const std::string _name, int _min_grade);
+		Form(const std::string _name, int _sign_grade, int _exec_grade);
 		Form(Form &tocopy);
 		~Form();
 		Form & operator = (Form &toequalize);
 		const std::string getName();
-		int getGrade();
+		int getSignGrade();
 		bool getSignatureStatus();
 		void beSigned(Bureaucrat signer);
+		virtual void execute(Bureaucrat const & executor) = 0;
 
 		class GradeTooHighException: public std::exception
 		{
@@ -59,6 +61,15 @@ class Form
 				std::string exceptionPrint()
 				{
 					return("Exception: Form was already signed!\n");
+				}
+		};
+
+		class NotSignedException: public std::exception
+		{
+			public:
+				std::string exceptionPrint()
+				{
+					return("Exception: Unsigned forms cannot be executed!\n");
 				}
 		};
 		

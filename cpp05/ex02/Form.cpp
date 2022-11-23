@@ -6,30 +6,30 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 20:00:15 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/23 21:09:58 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
 
 
-Form::Form(): name("Untitled"), min_grade(150)
+Form::Form(): name("Untitled"), sign_grade(150), exec_grade(150)
 {
 	if (NOTIFS)
 		std::cout << "Form Default constructor called." << std::endl;
 	is_signed = false;
 }
 
-Form::Form(const std::string _name, const int _min_grade): name(_name), min_grade(_min_grade)
+Form::Form(const std::string _name, const int _sign_grade, const int _exec_grade): name(_name), sign_grade(_sign_grade), exec_grade(_exec_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Regular constructor called." << std::endl;
 	is_signed = false;
 	try
 	{
-		if (min_grade < 1)
+		if (sign_grade < 1 || exec_grade < 1)
 			throw Form::GradeTooLowException();
-		else if (min_grade > 150)
+		else if (sign_grade > 150 || exec_grade > 150)
 			throw Form::GradeTooHighException();
 	}
 	catch (Form::GradeTooHighException & e)
@@ -42,7 +42,7 @@ Form::Form(const std::string _name, const int _min_grade): name(_name), min_grad
 	}
 }
 
-Form::Form(Form &tocopy): name(tocopy.name), min_grade(tocopy.min_grade)
+Form::Form(Form &tocopy): name(tocopy.name), sign_grade(tocopy.sign_grade), exec_grade(tocopy.exec_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Copy constructor called." << std::endl;
@@ -60,7 +60,7 @@ Form & Form::operator = (Form &toequalize)
 {
 	if (NOTIFS)
 		std::cout << "Form Assignation operator called." << std::endl;
-	is_signed = toequalize.getGrade();
+	is_signed = toequalize.getSignGrade();
 	return (*this);
 }
 
@@ -69,9 +69,9 @@ const std::string Form::getName()
 	return (name);
 }
 
-int Form::getGrade()
+int Form::getSignGrade()
 {
-	return (min_grade);
+	return (sign_grade);
 }
 
 bool Form::getSignatureStatus()
@@ -81,13 +81,13 @@ bool Form::getSignatureStatus()
 
 void Form::beSigned(Bureaucrat signer)
 {
-	if (min_grade < 1)
+	if (sign_grade < 1)
 		throw Form::GradeTooHighException();
-	else if (min_grade > 150)
+	else if (sign_grade > 150)
 		throw Form::GradeTooLowException();
 	else if (is_signed)
 		throw Form::AlreadySignedException();
-	else if (min_grade < signer.getGrade())
+	else if (sign_grade < signer.getGrade())
 		throw Form::GradeTooHighException();
 
 	is_signed = true;
@@ -95,6 +95,6 @@ void Form::beSigned(Bureaucrat signer)
 
 std::ostream & operator << (std::ostream &ost, Form &toprint)
 {
-	ost << "Form name: " << toprint.getName() << " | Required grade: " << toprint.getGrade() << " | Signed: " << toprint.getSignatureStatus() << ".";
+	ost << "Form name: " << toprint.getName() << " | Required grade: " << toprint.getSignGrade() << " | Signed: " << toprint.getSignatureStatus() << ".";
 	return (ost);
 }

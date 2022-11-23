@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/11/19 00:53:49 by jvacaris         ###   ########.fr        #
+#    Updated: 2022/11/23 19:30:23 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,14 +16,20 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	Bureaucrat.cpp	\
-		Form.cpp		\
+SRCS =	Bureaucrat.cpp				\
+		Form.cpp					\
+		PresidentialPardonForm.cpp	\
+		RobotomyRequestForm.cpp		\
+		ShrubberyCreationForm.cpp	\
 		main.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =	Bureaucrat.hpp	\
-			Form.hpp
+INCLUDE =	Bureaucrat.hpp				\
+			Form.hpp					\
+			PresidentialPardonForm.hpp	\
+			RobotomyRequestForm.hpp		\
+			ShrubberyCreationForm.hpp
 
 INCLUDE_DIR = ./
 
