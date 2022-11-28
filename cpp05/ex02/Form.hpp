@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/23 21:09:34 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:54:59 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,9 +33,11 @@ class Form
 		Form & operator = (Form &toequalize);
 		const std::string getName();
 		int getSignGrade();
+		int getExecGrade();
 		bool getSignatureStatus();
 		void beSigned(Bureaucrat signer);
 		virtual void execute(Bureaucrat const & executor) = 0;
+		void setSignatureStatus(bool newstatus);
 
 		class GradeTooHighException: public std::exception
 		{

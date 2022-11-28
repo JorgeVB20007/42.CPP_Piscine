@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 19:32:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 19:20:57 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/28 23:45:29 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,8 +31,8 @@ class Bureaucrat
 		Bureaucrat(Bureaucrat &tocopy);
 		~Bureaucrat();
 		Bureaucrat & operator = (Bureaucrat &toequalize);
-		const std::string getName();
-		int getGrade();
+		const std::string getName() const;
+		int getGrade() const;
 		void gradeup();
 		void gradedown();
 		void signForm(Form & tosign);

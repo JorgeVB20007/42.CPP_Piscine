@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/23 21:09:58 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/28 21:55:15 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -74,9 +74,19 @@ int Form::getSignGrade()
 	return (sign_grade);
 }
 
+int Form::getExecGrade()
+{
+	return (exec_grade);
+}
+
 bool Form::getSignatureStatus()
 {
 	return (is_signed);
+}
+
+void Form::setSignatureStatus(bool newstatus)
+{
+	is_signed = newstatus;
 }
 
 void Form::beSigned(Bureaucrat signer)

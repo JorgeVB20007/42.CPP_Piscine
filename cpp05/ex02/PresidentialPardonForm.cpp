@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/23 19:07:22 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/23 21:32:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/28 23:53:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,7 @@ PresidentialPardonForm::PresidentialPardonForm(const std::string _target): Form(
 		std::cout << "PresidentialPardonForm Regular constructor called." << std::endl;
 }
 
-Form::Form(Form &tocopy): name(tocopy.name), sign_grade(tocopy.sign_grade), exec_grade(tocopy.exec_grade)
+PresidentialPardonForm::PresidentialPardonForm(PresidentialPardonForm &tocopy): Form("PresidentialPardonForm", 25, 5), target(tocopy.getTarget())
 {
 	if (NOTIFS)
 		std::cout << "PresidentialPardonForm Copy constructor called." << std::endl;
@@ -42,23 +42,33 @@ PresidentialPardonForm & PresidentialPardonForm::operator = (PresidentialPardonF
 {
 	if (NOTIFS)
 		std::cout << "PresidentialPardonForm Assignation operator called." << std::endl;
-	Form::is_signed = toequalize.getSignGrade();
+	setSignatureStatus(toequalize.getSignGrade());
 	return (*this);
 }
 
 void PresidentialPardonForm::execute(Bureaucrat const & executor)
 {
-	(void)executor;
+//	(void)executor;
 	try
 	{
 		if (getSignatureStatus())
 			throw Form::NotSignedException();
-//		if (executor.getGrade() < getSignGrade())
+		if (executor.getGrade() > getExecGrade())
+			throw Form::GradeTooHighException();
 		std::cout << target << " has been pardoned by Zafod Beeblebrox" << std::endl;
 	}
 	catch(Form::NotSignedException & e)
 	{
 		std::cout << e.exceptionPrint();
 	}
+	catch(Form::GradeTooHighException & e)
+	{
+		std::cout << e.exceptionPrint();
+	}
 	
+}
+
+const std::string PresidentialPardonForm::getTarget()
+{
+	return(target);
 }

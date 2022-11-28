@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/23 20:50:42 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/28 22:06:39 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,38 +28,7 @@ class PresidentialPardonForm: public Form
 		~PresidentialPardonForm();
 		PresidentialPardonForm & operator = (PresidentialPardonForm &toequalize);
 		void execute(Bureaucrat const & executor);
-		// const std::string getName();
-		// int getGrade();
-		// bool getSignatureStatus();
-		// void beSigned(Bureaucrat signer);
-
-		// class GradeTooHighException: public std::exception
-		// {
-		// 	public:
-		// 		std::string exceptionPrint()
-		// 		{
-		// 			return("Exception: Form's grade is too high!\n");
-		// 		}
-		// };
-
-		// class GradeTooLowException: public std::exception
-		// {
-		// 	public:
-		// 		std::string exceptionPrint()
-		// 		{
-		// 			return("Exception: Form's grade is too low!\n");
-		// 		}
-		// };
-
-		// class AlreadySignedException: public std::exception
-		// {
-		// 	public:
-		// 		std::string exceptionPrint()
-		// 		{
-		// 			return("Exception: Form was already signed!\n");
-		// 		}
-		// };
-		
+		const std::string getTarget();
 };
 
 #endif
