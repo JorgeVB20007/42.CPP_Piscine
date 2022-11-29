@@ -6,17 +6,28 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 19:16:28 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/29 20:53:29 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "Form.hpp"
+#include "Intern.hpp"
 #include "PresidentialPardonForm.hpp"
 #include "RobotomyRequestForm.hpp"
 #include "ShrubberyCreationForm.hpp"
 
 int main()
 {
+	Intern newintern;
+	Form *createdform;
+
+	createdform = newintern.makeForm("presidential", "Trillian");
+	Bureaucrat bfirst("First Bureaucrat", 2);
+
+	bfirst.signForm(*createdform);
+	bfirst.executeForm(*createdform);
+	
+	/*
 	std::cout << "Creating Bureaucrats" << std::endl;
 	Bureaucrat bfirst("First Bureaucrat", 42);
 	Bureaucrat bsecond("Second Bureaucrat", 84);
@@ -112,5 +123,5 @@ int main()
 	bthird.executeForm(fsecond);
 	bthird.executeForm(fsecond);
 	
-	std::cout << "Done" << std::endl;
+	std::cout << "Done" << std::endl;*/
 }
