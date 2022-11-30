@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/30 16:36:46 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:36:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -119,6 +119,10 @@ int main()
 	bfirst.executeForm(*rrf);
 	bthird.executeForm(*rrf);
 	bthird.executeForm(*rrf);
+
+	delete(scf);
+	delete(rrf);
+	delete(ppf);
 	
 	std::cout << "Done" << std::endl;
 }

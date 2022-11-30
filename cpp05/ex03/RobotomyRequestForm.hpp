@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 21:57:52 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 16:27:25 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:07:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class RobotomyRequestForm: public Form
 		RobotomyRequestForm();
 		RobotomyRequestForm(const std::string target);
 		RobotomyRequestForm(RobotomyRequestForm &tocopy);
-		~RobotomyRequestForm();
+		/*virtual */~RobotomyRequestForm();
 		RobotomyRequestForm & operator = (RobotomyRequestForm &toequalize);
 		void execute(Bureaucrat const & executor) const;
 		const std::string getTarget();

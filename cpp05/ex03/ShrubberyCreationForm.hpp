@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 23:36:57 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 16:27:29 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:07:16 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,7 @@ class ShrubberyCreationForm: public Form
 		ShrubberyCreationForm();
 		ShrubberyCreationForm(const std::string target);
 		ShrubberyCreationForm(ShrubberyCreationForm &tocopy);
-		~ShrubberyCreationForm();
+		/*virtual */~ShrubberyCreationForm();
 		ShrubberyCreationForm & operator = (ShrubberyCreationForm &toequalize);
 		void execute(Bureaucrat const & executor) const;
 		const std::string getTarget();

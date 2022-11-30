@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:42:24 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/30 17:08:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:36:30 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,7 +82,7 @@ static Form *new_PresidentialPardonForm(std::string target)
 
 Form	*Intern::makeForm(std::string type, std::string target)
 {
-	Form	*form_types[] = {new_ShrubberyCreationForm(target), new_RobotomyRequestForm(target), new_PresidentialPardonForm(target)};
+	Form*	(*form_types [3])(std::string) = {&new_ShrubberyCreationForm, &new_RobotomyRequestForm, &new_PresidentialPardonForm};
 	int index;
 	
 	index = find_coincidence(str_toLower(type));
@@ -93,6 +93,6 @@ Form	*Intern::makeForm(std::string type, std::string target)
 	}
 	else
 	{
-		return(form_types[index]);
+		return((*form_types[index])(target));
 	}
 }

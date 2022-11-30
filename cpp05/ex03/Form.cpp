@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 17:11:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 19:51:05 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,9 +28,9 @@ Form::Form(const std::string _name, const int _sign_grade, const int _exec_grade
 	try
 	{
 		if (sign_grade < 1 || exec_grade < 1)
-			throw Form::GradeTooLowException();
-		else if (sign_grade > 150 || exec_grade > 150)
 			throw Form::GradeTooHighException();
+		else if (sign_grade > 150 || exec_grade > 150)
+			throw Form::GradeTooLowException();
 	}
 	catch (Form::GradeTooHighException & e)
 	{
