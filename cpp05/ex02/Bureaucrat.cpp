@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 16:52:57 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:29:52 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -183,9 +183,4 @@ void Bureaucrat::executeForm(Form const & form)
 		std::cout << getName() << " is unauthorized to execute " << form.getName() << " because ";
 		std::cout << e.exceptionPrint();
 	}
-/*	catch (Form::FileOpeningErrorException & e)
-	{
-		std::cout << getName() << " couldn't execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint(form.getName());
-	}*/
 }
