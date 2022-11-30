@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/28 23:37:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 19:11:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 16:53:31 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -82,13 +82,20 @@ void ShrubberyCreationForm::execute(Bureaucrat const & executor) const
 		throw Form::NotSignedException();
 	if (executor.getGrade() > getExecGrade())
 		throw Form::GradeTooHighException();
-	foutput.open(target + "_shrubbery");
-	if (!foutput.is_open())
+	try
 	{
-		throw ShrubberyCreationForm::FileOpeningErrorException();
+		foutput.open(target + "_shrubbery");
+		if (!foutput.is_open())
+		{
+			throw ShrubberyCreationForm::FileOpeningErrorException();
+		}
+		foutput << getTrees();
+		foutput.close();
 	}
-	foutput << getTrees();
-	foutput.close();
+	catch (ShrubberyCreationForm::FileOpeningErrorException & e)
+	{
+		std::cout << e.exceptionPrint(target);
+	}
 }
 
 const std::string ShrubberyCreationForm::getTarget()

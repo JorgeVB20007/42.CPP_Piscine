@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:42:24 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/29 20:54:01 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/11/30 17:08:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,7 +60,6 @@ static int find_coincidence(std::string tosearch)
 	{
 		if (options[a] == tosearch)
 			return (a % 3);
-		std::cout << tosearch << " != " << options[a] << std::endl;
 	}
 	return (-1);
 
@@ -95,6 +94,5 @@ Form	*Intern::makeForm(std::string type, std::string target)
 	else
 	{
 		return(form_types[index]);
-		//!		Return pointer to the correct specific Form.
 	}
 }
