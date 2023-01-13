@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/12 21:07:10 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:22:48 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -145,5 +145,6 @@ int main()
 	std::cout << "\033[0m";
 	bthird.executeForm(fsecond);
 	
+	delete ffourth;
 	std::cout << "Done" << std::endl;
 }

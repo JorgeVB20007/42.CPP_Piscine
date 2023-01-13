@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/12 21:11:27 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:17:38 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,10 @@ Form::Form(const std::string &_name, const int _sign_grade, const int _exec_grad
 	if (NOTIFS)
 		std::cout << "Form Regular constructor called." << std::endl;
 	is_signed = false;
-//	// try
-//	// {
 		if (sign_grade < 1 || exec_grade < 1)
 			throw Form::GradeTooHighException();
 		else if (sign_grade > 150 || exec_grade > 150)
 			throw Form::GradeTooLowException();
-//	// }
-//	// catch (Form::GradeTooHighException & e)
-//	// {
-//	// 	std::cout << e.exceptionPrint();
-//	// }
-//	// catch (Form::GradeTooLowException & e)
-//	// {
-//	// 	std::cout << e.exceptionPrint();
-//	// }
 }
 
 Form::Form(Form &tocopy): name(tocopy.name), sign_grade(tocopy.sign_grade), exec_grade(tocopy.exec_grade)
@@ -64,7 +53,7 @@ Form & Form::operator = (Form &toequalize)
 	return (*this);
 }
 
-const std::string Form::getName() const
+const std::string &Form::getName() const
 {
 	return (name);
 }

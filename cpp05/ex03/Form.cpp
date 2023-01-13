@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 17:54:47 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:14:20 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,12 +54,12 @@ Form & Form::operator = (Form &toequalize)
 	return (*this);
 }
 
-const std::string Form::getName() const
+const std::string &Form::getName() const
 {
 	return (name);
 }
 
-int Form::getSignGrade()
+int Form::getSignGrade() const
 {
 	return (sign_grade);
 }

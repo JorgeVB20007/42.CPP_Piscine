@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 17:33:32 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 20:25:19 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,9 @@ Bureaucrat::Bureaucrat(const std::string &_name, int _grade): name(_name)
 		std::cout << "Bureaucrat Regular constructor called." << std::endl;
 	grade = _grade;
 	if (grade < 1)
-		throw Bureaucrat::GradeTooLowException();
-	else if (grade > 150)
 		throw Bureaucrat::GradeTooHighException();
+	else if (grade > 150)
+		throw Bureaucrat::GradeTooLowException();
 
 }
 
@@ -53,7 +53,7 @@ Bureaucrat & Bureaucrat::operator = (Bureaucrat &toequalize)
 	return (*this);
 }
 
-const std::string Bureaucrat::getName() const
+const std::string &Bureaucrat::getName() const
 {
 	return (name);
 }
