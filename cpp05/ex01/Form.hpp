@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 19:20:44 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/12/10 21:57:21 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,13 +26,13 @@ class Form
 	
 	public:
 		Form();
-		Form(const std::string _name, int _min_grade);
+		Form(const std::string &_name, int _min_grade);
 		Form(Form &tocopy);
 		~Form();
 		Form & operator = (Form &toequalize);
-		const std::string getName();
-		int getGrade();
-		bool getSignatureStatus();
+		const std::string getName() const;
+		int getGrade() const;
+		bool getSignatureStatus() const;
 		void beSigned(Bureaucrat signer);
 
 		class GradeTooHighException: public std::exception

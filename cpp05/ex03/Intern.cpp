@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:42:24 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/30 19:36:30 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 16:37:00 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -88,8 +88,7 @@ Form	*Intern::makeForm(std::string type, std::string target)
 	index = find_coincidence(str_toLower(type));
 	if (index == -1)
 	{
-		std::cout << "Unknown form \"" << type << "\"" << std::endl;
-		return (NULL);
+		throw Intern::UnknownFormException();
 	}
 	else
 	{

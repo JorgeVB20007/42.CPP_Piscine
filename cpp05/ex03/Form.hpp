@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/30 19:03:19 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/12 21:12:11 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ class Form
 	
 	public:
 		Form();
-		Form(const std::string _name, int _sign_grade, int _exec_grade);
+		Form(const std::string &_name, int _sign_grade, int _exec_grade);
 		Form(Form &tocopy);
 		virtual ~Form();
 		Form & operator = (Form &toequalize);

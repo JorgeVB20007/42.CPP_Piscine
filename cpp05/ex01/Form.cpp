@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 20:00:15 by jvacaris         ###   ########.fr       */
+/*   Updated: 2022/12/10 21:29:05 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,26 @@ Form::Form(): name("Untitled"), min_grade(150)
 	is_signed = false;
 }
 
-Form::Form(const std::string _name, const int _min_grade): name(_name), min_grade(_min_grade)
+Form::Form(const std::string &_name, const int _min_grade): name(_name), min_grade(_min_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Regular constructor called." << std::endl;
 	is_signed = false;
-	try
-	{
+//	try
+//	{
 		if (min_grade < 1)
 			throw Form::GradeTooLowException();
 		else if (min_grade > 150)
 			throw Form::GradeTooHighException();
-	}
-	catch (Form::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
+	// }
+	// catch (Form::GradeTooHighException & e)
+	// {
+	// 	std::cout << e.exceptionPrint();
+	// }
+	// catch (Form::GradeTooLowException & e)
+	// {
+	// 	std::cout << e.exceptionPrint();
+	// }
 }
 
 Form::Form(Form &tocopy): name(tocopy.name), min_grade(tocopy.min_grade)
@@ -64,17 +64,17 @@ Form & Form::operator = (Form &toequalize)
 	return (*this);
 }
 
-const std::string Form::getName()
+const std::string Form::getName() const
 {
 	return (name);
 }
 
-int Form::getGrade()
+int Form::getGrade() const
 {
 	return (min_grade);
 }
 
-bool Form::getSignatureStatus()
+bool Form::getSignatureStatus() const
 {
 	return (is_signed);
 }

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/21 20:00:37 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:33:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,26 +19,15 @@ Bureaucrat::Bureaucrat(): name("???")
 	grade = 150;
 }
 
-Bureaucrat::Bureaucrat(const std::string _name, int _grade): name(_name)
+Bureaucrat::Bureaucrat(const std::string &_name, int _grade): name(_name)
 {
 	if (NOTIFS)
 		std::cout << "Bureaucrat Regular constructor called." << std::endl;
 	grade = _grade;
-	try
-	{
 		if (grade < 1)
 			throw Bureaucrat::GradeTooLowException();
 		else if (grade > 150)
 			throw Bureaucrat::GradeTooHighException();
-	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
 }
 
 Bureaucrat::Bureaucrat(Bureaucrat &tocopy): name(tocopy.name)
@@ -63,12 +52,12 @@ Bureaucrat & Bureaucrat::operator = (Bureaucrat &toequalize)
 	return (*this);
 }
 
-const std::string Bureaucrat::getName()
+const std::string &Bureaucrat::getName() const
 {
 	return (name);
 }
 
-int Bureaucrat::getGrade()
+int Bureaucrat::getGrade() const
 {
 	return (grade);
 }
@@ -79,8 +68,7 @@ void Bureaucrat::gradeup()
 	{
 		if (grade - 1 < 1)
 			throw Bureaucrat::GradeTooHighException();
-		else
-			grade--;
+		grade--;
 	}
 	catch (Bureaucrat::GradeTooHighException & e)
 	{

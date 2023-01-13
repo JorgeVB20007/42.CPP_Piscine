@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/11/30 19:51:05 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/13 17:54:47 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,26 +20,16 @@ Form::Form(): name("Untitled"), sign_grade(150), exec_grade(150)
 	is_signed = false;
 }
 
-Form::Form(const std::string _name, const int _sign_grade, const int _exec_grade): name(_name), sign_grade(_sign_grade), exec_grade(_exec_grade)
+Form::Form(const std::string &_name, const int _sign_grade, const int _exec_grade): name(_name), sign_grade(_sign_grade), exec_grade(_exec_grade)
 {
 	if (NOTIFS)
 		std::cout << "Form Regular constructor called." << std::endl;
 	is_signed = false;
-	try
-	{
-		if (sign_grade < 1 || exec_grade < 1)
-			throw Form::GradeTooHighException();
-		else if (sign_grade > 150 || exec_grade > 150)
-			throw Form::GradeTooLowException();
-	}
-	catch (Form::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
-	}
+
+	if (sign_grade < 1 || exec_grade < 1)
+		throw Form::GradeTooHighException();
+	else if (sign_grade > 150 || exec_grade > 150)
+		throw Form::GradeTooLowException();
 }
 
 Form::Form(Form &tocopy): name(tocopy.name), sign_grade(tocopy.sign_grade), exec_grade(tocopy.exec_grade)
