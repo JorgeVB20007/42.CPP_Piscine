@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 20:12:42 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:00:41 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,16 +22,18 @@ class Form
 	private:
 		const std::string name;
 		bool is_signed;
-		const int min_grade;
+		const int sign_grade;
+		const int exec_grade;
 	
 	public:
 		Form();
-		Form(const std::string &_name, int _min_grade);
+		Form(const std::string &_name, int _sign_grade, int _exec_grade);
 		Form(Form &tocopy);
 		~Form();
 		Form & operator = (Form &toequalize);
 		const std::string &getName() const;
-		int getGrade() const;
+		int getSignGrade() const;
+		int getExecGrade() const;
 		bool getSignatureStatus() const;
 		void beSigned(Bureaucrat signer);
 

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 20:17:38 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:02:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ Form & Form::operator = (Form &toequalize)
 {
 	if (NOTIFS)
 		std::cout << "Form Assignation operator called." << std::endl;
-	is_signed = toequalize.getSignGrade();
+	is_signed = toequalize.getSignatureStatus();
 	return (*this);
 }
 

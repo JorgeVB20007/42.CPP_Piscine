@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/12 15:37:21 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/14 23:06:13 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,14 +35,14 @@ int main()
 	
 //?		Creating Forms
 	std::cout << std::endl << "Creating Forms" << std::endl;
-	Form ffirst("First Form", 42);
-	Form fsecond("Second Form", 21);
-	Form fthird("Third Form", 2);
+	Form ffirst("First Form", 42, 24);
+	Form fsecond("Second Form", 21, 12);
+	Form fthird("Third Form", 2, 120);
 
 //*		Good Form test
 	try
 	{
-		Form good_form_test("Good Form", 42);
+		Form good_form_test("Good Form", 42, 5);
 		std::cout << "Good form created correctly!" << std::endl;
 	}
 	catch(Form::GradeTooLowException & e)
@@ -57,7 +57,7 @@ int main()
 //!		Bad forms tests
 	try
 	{
-		Form bad_form_one("First Bad Form", 156);
+		Form bad_form_one("First Bad Form", 156, 3);
 	}
 	catch(Form::GradeTooLowException & e)
 	{
@@ -70,7 +70,7 @@ int main()
 	
 	try
 	{
-		Form bad_form_two("Second Bad Form", 0);
+		Form bad_form_two("Second Bad Form", 0, 420);
 	}
 	catch(Form::GradeTooLowException & e)
 	{
