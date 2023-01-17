@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/14 23:00:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 11:40:52 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,7 +40,7 @@ class Form
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form's grade is too high!\n");
 				}
@@ -49,7 +49,7 @@ class Form
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form's grade is too low!\n");
 				}
@@ -58,7 +58,7 @@ class Form
 		class AlreadySignedException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form was already signed!\n");
 				}

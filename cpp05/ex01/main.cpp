@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/14 23:06:13 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:40:23 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,13 +24,9 @@ int main()
 	{
 		Bureaucrat bad_bureaucrat_one("Bad Bureaucrat", 160);
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 	
 //?		Creating Forms
@@ -45,13 +41,9 @@ int main()
 		Form good_form_test("Good Form", 42, 5);
 		std::cout << "Good form created correctly!" << std::endl;
 	}
-	catch(Form::GradeTooLowException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch(Form::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 //!		Bad forms tests
@@ -59,26 +51,18 @@ int main()
 	{
 		Form bad_form_one("First Bad Form", 156, 3);
 	}
-	catch(Form::GradeTooLowException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch(Form::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 	
 	try
 	{
 		Form bad_form_two("Second Bad Form", 0, 420);
 	}
-	catch(Form::GradeTooLowException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch(Form::GradeTooHighException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 //?		Printing stuff

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 20:22:48 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:41:05 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,13 +28,9 @@ int main()
 	{
 		Bureaucrat bad_bureaucrat_one("Third Bureaucrat", 160);
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 //?		Creating Forms
@@ -76,10 +72,9 @@ int main()
 	std::cout << "-------" << std::endl;
 
 //*		Signing forms by authorized Bureaucrats
-	std::cout << std::endl << "   Signing all forms   " << std::endl;
+	std::cout << std::endl << "   Signing most forms   " << std::endl;
 	bfirst.signForm(fsecond);
 	bsecond.signForm(fthird);
-	bthird.signForm(ffirst);
 	bthird.signForm(*ffourth);
 
 //?		Printing stuff
@@ -94,7 +89,7 @@ int main()
 	std::cout << *ffourth << std::endl;
 	std::cout << "-------" << std::endl;
 
-//!		Executing Forms by unauthorized Bureaucrats
+//!		Executing Forms by unauthorized Bureaucrats or unsigned Forms
 	std::cout << std::endl << "   Trying some invalid executions   " << std::endl;
 	bfirst.executeForm(ffirst);
 	bsecond.executeForm(fsecond);
@@ -110,6 +105,9 @@ int main()
 	std::cout << fthird << std::endl;
 	std::cout << *ffourth << std::endl;
 	std::cout << "-------" << std::endl;
+
+//?		Signing last form
+	bthird.signForm(ffirst);
 
 //*		Executing Forms by authorized Bureaucrats
 	std::cout << std::endl << "   Executing all forms   " << std::endl;

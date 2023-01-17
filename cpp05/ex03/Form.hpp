@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/17 20:09:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 20:14:29 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:32:54 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -42,7 +42,7 @@ class Form
 		class GradeTooHighException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form's grade is too high!\n");
 				}
@@ -51,7 +51,7 @@ class Form
 		class GradeTooLowException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form's grade is too low!\n");
 				}
@@ -60,7 +60,7 @@ class Form
 		class AlreadySignedException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Form was already signed!\n");
 				}
@@ -69,7 +69,7 @@ class Form
 		class NotSignedException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
 					return("Exception: Unsigned forms cannot be executed!\n");
 				}

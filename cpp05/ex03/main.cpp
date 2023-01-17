@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 17:53:26 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:36:35 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -41,9 +41,9 @@ int main()
 		Form	*invf;
 		invf = newintern.makeForm("unknown form", "someone");
 	}
-	catch (Intern::UnknownFormException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 //?		Printing stuff

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/23 18:52:51 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 20:18:06 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:41:33 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,9 +71,9 @@ void Bureaucrat::gradeup()
 		else
 			grade--;
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 }
 
@@ -85,9 +85,9 @@ void Bureaucrat::gradedown()
 			throw Bureaucrat::GradeTooLowException();
 		grade++;
 	}
-	catch (Bureaucrat::GradeTooLowException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 }
 
@@ -108,30 +108,9 @@ void Bureaucrat::signForm(Form & tosign)
 		tosign.beSigned(*this);
 		std::cout << getName() << " signs " << tosign.getName() << "." << std::endl;
 	}
-	catch (Form::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << getName() << " cannot sign " << tosign.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::GradeTooLowException & e)
-	{
-		std::cout << getName() << " cannot sign " << tosign.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::AlreadySignedException & e)
-	{
-		std::cout << getName() << " cannot sign " << tosign.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << getName() << " is unauthorized to sign " << tosign.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << getName() << " is unauthorized to sign " << tosign.getName() << " because ";
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 }
@@ -147,29 +126,8 @@ void Bureaucrat::executeForm(Form const & form)
 		form.execute(*this);
 		std::cout << getName() << " executes " << form.getName() << "." << std::endl;
 	}
-	catch (Form::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << getName() << " cannot execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::GradeTooLowException & e)
-	{
-		std::cout << getName() << " cannot execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Form::NotSignedException & e)
-	{
-		std::cout << getName() << " cannot execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooHighException & e)
-	{
-		std::cout << getName() << " is unauthorized to execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << getName() << " is unauthorized to execute " << form.getName() << " because ";
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 }

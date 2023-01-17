@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/01 20:40:41 by jvacaris          #+#    #+#             */
-/*   Updated: 2022/12/07 17:38:32 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:40:06 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,14 +30,18 @@ int main()
 		std::cout << first << std::endl;
 		std::cout << "=======" << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
+	}
+/*	catch (Bureaucrat::GradeTooHighException & e)
+	{
+		std::cout << e.what();
 	}
 	catch (Bureaucrat::GradeTooLowException & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
+		std::cout << e.what();
+	}*/
 
 
 	try
@@ -55,14 +59,18 @@ int main()
 		std::cout << second << std::endl;
 		std::cout << "=======" << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
+	}
+/*	catch (Bureaucrat::GradeTooHighException & e)
+	{
+		std::cout << e.what();
 	}
 	catch (Bureaucrat::GradeTooLowException & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
+		std::cout << e.what();
+	}*/
 
 
 	try
@@ -85,13 +93,9 @@ int main()
 		std::cout << fourth << std::endl;
 		std::cout << "=======" << std::endl;
 	}
-	catch (Bureaucrat::GradeTooHighException & e)
+	catch (std::exception & e)
 	{
-		std::cout << e.exceptionPrint();
-	}
-	catch (Bureaucrat::GradeTooLowException & e)
-	{
-		std::cout << e.exceptionPrint();
+		std::cout << e.what();
 	}
 
 	std::cout << "Done" << std::endl;

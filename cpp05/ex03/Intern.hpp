@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/29 19:37:18 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/13 16:40:20 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/17 12:37:46 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,9 +26,9 @@ class Intern
 		class UnknownFormException: public std::exception
 		{
 			public:
-				std::string exceptionPrint()
+				const char *what() const throw()
 				{
-					return("Exception: Form not found.\n");
+					return("Exception: The Intern could not find the Form.\n");
 				}
 		};
 };
