@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2022/10/31 19:17:05 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/01/21 18:12:13 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,12 +16,12 @@ COLOR_YELLOW = \033[0;33m
 COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
-SRCS =	Bureaucrat.cpp \
-		main.cpp
+SRCS =	main.cpp			\
+		case_actions.cpp
 
 SRCS_DIR = ./
 
-INCLUDE =	Bureaucrat.hpp
+INCLUDE =	converter.hpp
 
 INCLUDE_DIR = ./
 
@@ -31,7 +31,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
-NAME = papers
+NAME = convert
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
