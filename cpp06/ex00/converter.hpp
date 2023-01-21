@@ -6,12 +6,12 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:53:10 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/21 18:11:18 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/21 18:16:18 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef CHANGETITLE_HPP
-# define CHANGETITLE_HPP
+#ifndef CONVERTER_HPP
+# define CONVERTER_HPP
 
 #include <iostream>
 #include <string>
@@ -29,7 +29,7 @@ enum e_type_of_value
 	DOUBLE
 };
 
-struct s_str_characteristics
+typedef struct s_str_characteristics
 {
 	bool has_sign;
 	bool has_digits;
