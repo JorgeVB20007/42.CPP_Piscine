@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2023/01/24 16:09:49 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/01/24 16:09:43 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
 SRCS =	main.cpp			\
-		case_actions.cpp
+		serialization.cpp
 
 SRCS_DIR = ./
 

@@ -6,13 +6,13 @@
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/11/30 20:50:52 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/01/21 18:15:55 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/01/21 20:50:31 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "converter.hpp"
 
-struct s_str_characteristics get_str_facts(std::string str)
+static struct s_str_characteristics get_str_facts(std::string str)
 {
 	struct s_str_characteristics facts;
 	int a = -1;
@@ -41,7 +41,7 @@ struct s_str_characteristics get_str_facts(std::string str)
 	return (facts);
 }
 
-int identify_type(std::string str)
+static int identify_type(std::string str)
 {
 	struct s_str_characteristics facts;
 	facts = get_str_facts(str);
