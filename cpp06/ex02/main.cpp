@@ -81,10 +81,11 @@ void identify(Base &p)
 	}
 }
 
+
 int main(int argc, char **argv)
 {
 	if (argc == 1)
-		srandom(42);
+		srandom(std::time(NULL));
 	else if (argc == 2)
 		srandom(atoi(argv[1]));
 	else

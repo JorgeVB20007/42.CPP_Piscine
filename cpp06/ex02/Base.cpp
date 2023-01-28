@@ -2,5 +2,6 @@
 
 Base::~Base()
 {
-	
+	if (NOTIFS)
+		std::cout << "Destructor called" << std::endl;
 }
