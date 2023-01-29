@@ -25,7 +25,15 @@ void is_int(std::string str)
 	float str_float;
 	double str_double;
 
-	str_int = std::stoi(str);
+	try
+	{
+		str_int = std::stoi(str);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Error: The number given is formatted as an int but it represents an out-of-range value." << std::endl;
+		return ;
+	}
 	if (str_int >= 32 && str_int <= 126)
 	{
 		str_char = (char)str_int;
