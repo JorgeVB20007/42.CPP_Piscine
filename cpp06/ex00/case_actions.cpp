@@ -59,7 +59,16 @@ void is_float(std::string str)
 	double str_double;
 
 	std::cout.precision(10);
-	str_float = std::stof(str, NULL);
+	try
+	{
+		str_float = std::stof(str, NULL);
+	}
+	catch (std::exception & e)
+	{
+		std::cout << "Error: The number given is formatted as a float but it represents an out-of-range value." << std::endl;
+		return ;
+	}
+	
 
 	if (str_float >= 32.0f && str_float < 127.0f)
 	{
@@ -101,7 +110,15 @@ void is_double(std::string str)
 	double str_double;
 
 	std::cout.precision(10);
-	str_double = std::stod(str, NULL);
+	try
+	{
+		str_double = std::stod(str, NULL);
+	}
+	catch(const std::exception& e)
+	{
+		std::cout << "Error: The number given is formatted as a double but it represents an out-of-range value." << std::endl;
+		return ;
+	}
 	if (str_double >= 32.0 && str_double < 127.0)
 	{
 		str_char = (char)str_double;
