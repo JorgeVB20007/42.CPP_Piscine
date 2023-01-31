@@ -1,3 +1,15 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   case_actions.cpp                                   :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2023/01/31 20:38:28 by jvacaris          #+#    #+#             */
+/*   Updated: 2023/01/31 20:38:29 by jvacaris         ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
 #include "converter.hpp"
 
 void is_char(std::string str)
@@ -8,9 +20,9 @@ void is_char(std::string str)
 	double str_double;
 
 	str_char = str[0];
-	str_int = (int)str[0];
-	str_float = (float)str[0];
-	str_double = (double)str[0];
+	str_int = static_cast<int>(str[0]);
+	str_float = static_cast<float>(str[0]);
+	str_double = static_cast<double>(str[0]);
 
 	std::cout << "char: '" << str_char << "'" << std::endl;
 	std::cout << "int: " << str_int << std::endl;
@@ -36,15 +48,15 @@ void is_int(std::string str)
 	}
 	if (str_int >= 32 && str_int <= 126)
 	{
-		str_char = (char)str_int;
+		str_char = static_cast<char>(str_int);
 		std::cout << "char: '" << str_char << "'" << std::endl;
 	}
 	else if (str_int < -127 || str_int > 127)
 		std::cout << "char: impossible" << std::endl;
 	else
 		std::cout << "char: Non displayable" << std::endl;
-	str_float = (float)str_int;
-	str_double = (double)str_int;
+	str_float = static_cast<float>(str_int);
+	str_double = static_cast<double>(str_int);
 
 	std::cout << "int: " << str_int << std::endl;
 	std::cout << "float: " << str_float << ".0f" << std::endl;
@@ -72,7 +84,7 @@ void is_float(std::string str)
 
 	if (str_float >= 32.0f && str_float < 127.0f)
 	{
-		str_char = (char)str_float;
+		str_char = static_cast<char>(str_float);
 		std::cout << "char: '" << str_char << "'" << std::endl;
 	}
 	else if (str_float < -127.0f || str_float > 128.0f || str == "nanf")
@@ -86,11 +98,11 @@ void is_float(std::string str)
 	}
 	else
 	{
-		str_int = (int)str_float;
+		str_int = static_cast<int>(str_float);
 		std::cout << "int: " << str_int << std::endl;
 	}
 
-	str_double = (double)str_float;
+	str_double = static_cast<double>(str_float);
 	std::cout << "float: " << str_float;
 	if (!(str_float - floorf(str_float)))
 		std::cout << ".0f" << std::endl;
@@ -121,7 +133,7 @@ void is_double(std::string str)
 	}
 	if (str_double >= 32.0 && str_double < 127.0)
 	{
-		str_char = (char)str_double;
+		str_char = static_cast<char>(str_double);
 		std::cout << "char: '" << str_char << "'" << std::endl;
 	}
 	else if (str_double < -127.0 || str_double > 128.0 || str == "nan")
@@ -135,7 +147,7 @@ void is_double(std::string str)
 	}
 	else
 	{
-		str_int = (int)str_double;
+		str_int = static_cast<int>(str_double);
 		std::cout << "int: " << str_int << std::endl;
 	}
 
@@ -145,7 +157,7 @@ void is_double(std::string str)
 		std::cout << "float: impossible" << std::endl;
 	else
 	{
-		str_float = (float)str_double;
+		str_float = static_cast<float>(str_double);
 		std::cout << "float: " << str_float;
 		if (!(str_float - floorf(str_float)))
 			std::cout << ".0f" << std::endl;
