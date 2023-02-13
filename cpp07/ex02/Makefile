@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2023/02/11 19:33:31 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/02/13 19:09:06 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS_DIR = ./objs/
 
 GCC = clang++
 
-CPP_FLAGS = -Wall -Werror -Wextra -std=c++98# -g3 -fsanitize=address
+CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = templates
 
