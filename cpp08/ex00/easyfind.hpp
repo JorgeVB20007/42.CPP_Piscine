@@ -1,38 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 15:00:16 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/14 21:02:06 by jvacaris         ###   ########.fr       */
+/*   Created: 2023/02/14 20:36:16 by jvacaris          #+#    #+#             */
+/*   Updated: 2023/02/14 21:54:09 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#ifndef ARRAY_HPP
+# define ARRAY_HPP
+
+#include <iostream>
+#include <algorithm>
+#include <vector>
 
 #define NOTIFS 0
 
-#include <iostream>
-
-template <class t_iter>
-void iter(t_iter *str, size_t len, void (function)(t_iter &))
+template<class T>
+void easyfind(T cont, int tofind)
 {
-	for (size_t i = 0; i < len; i++)
-	{
-		function(str[i]);
-	}
-}
-
-template <class t_iter>
-void iter(const t_iter *str, size_t len, void (function)(t_iter &))
-{
-	for (size_t i = 0; i < len; i++)
-	{
-		function(str[i]);
-	}
+	typename T::iterator iter;
+	iter = std::find(cont.begin(), cont.end(), tofind);
+	if (iter == cont.end())
+		std::cout << "False" << std::endl;
+	else
+		std::cout << "True" << std::endl;
 }
 
 #endif

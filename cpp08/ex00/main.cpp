@@ -1,38 +1,24 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   iter.hpp                                           :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/06 15:00:16 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/14 21:02:06 by jvacaris         ###   ########.fr       */
+/*   Created: 2023/02/14 20:36:13 by jvacaris          #+#    #+#             */
+/*   Updated: 2023/02/14 22:43:03 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ITER_HPP
-# define ITER_HPP
+#include "easyfind.hpp"
 
-#define NOTIFS 0
-
-#include <iostream>
-
-template <class t_iter>
-void iter(t_iter *str, size_t len, void (function)(t_iter &))
+int main()
 {
-	for (size_t i = 0; i < len; i++)
-	{
-		function(str[i]);
-	}
+	std::vector<int>first_vector {2, 4, 6, 8, 10};
+
+	first_vector.push_back(21);
+	first_vector.push_back(42);
+	first_vector.push_back(1337);
+	easyfind(first_vector, 4);
 }
 
-template <class t_iter>
-void iter(const t_iter *str, size_t len, void (function)(t_iter &))
-{
-	for (size_t i = 0; i < len; i++)
-	{
-		function(str[i]);
-	}
-}
-
-#endif
