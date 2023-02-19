@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   easyfind.hpp                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: jvacaris <jvacaris@student.42.fr>          +#+  +:+       +#+        */
+/*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:36:16 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/14 21:54:09 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/16 12:21:22 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,18 +16,22 @@
 #include <iostream>
 #include <algorithm>
 #include <vector>
+#include <array>
+#include <list>
 
 #define NOTIFS 0
 
 template<class T>
-void easyfind(T cont, int tofind)
+bool easyfind(T cont, int tofind)
 {
 	typename T::iterator iter;
 	iter = std::find(cont.begin(), cont.end(), tofind);
 	if (iter == cont.end())
-		std::cout << "False" << std::endl;
+		return (false);
+//		std::cout << "False" << std::endl;
 	else
-		std::cout << "True" << std::endl;
+		return (true);
+//		std::cout << "True" << std::endl;
 }
 
 #endif
