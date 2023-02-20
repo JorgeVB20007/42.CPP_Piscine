@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:37:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/19 22:14:28 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:26:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,7 +32,7 @@ class Span
 		void addNumberRange(int minnum, int maxnum);
 		int shortestSpan();
 		int longestSpan();
-		std::string show();
+		std::string show() const;
 
 		class SpanFull: public std::exception
 		{
@@ -57,6 +57,6 @@ class Span
 		unsigned int n;
 };
 
-//std::ostream operator << (Span &toequalize);
+std::ostream & operator << (std::ostream &output, Span const &toprint);
 
 #endif

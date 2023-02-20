@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 12:21:17 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/19 22:18:20 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/20 21:25:55 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 		
-		std::cout << "Span values: " << test_one.show() << std::endl;
+		std::cout << "Span values: " << test_one << std::endl;
 		std::cout << "Shortest span: " << test_one.shortestSpan() << std::endl;
 		std::cout << "Longest span: " << test_one.longestSpan() << std::endl;
 	}
@@ -61,7 +61,7 @@ int main()
 
 	{
 		std::cout << std::endl << "\033[1;33m~~~ Span of 1 value ~~~\033[0m" << std::endl;
-		Span test_three(4);
+		Span test_three(1);
 
 		try
 		{
@@ -73,7 +73,7 @@ int main()
 		}
 		try
 		{
-			std::cout << "Span values: " << test_three.show() << std::endl;
+			std::cout << "Span values: " << test_three << std::endl;
 		}
 		catch(const std::exception& e)
 		{
@@ -96,5 +96,17 @@ int main()
 			std::cerr << e.what() << '\n';
 		}
 	}
-		std::cout << std::endl << "\033[1;33m~~~ Done ~~~\033[0m" << std::endl;
+
+	{
+		std::cout << std::endl << "\033[1;33m~~~ Size 5 Span with 3 values ~~~\033[0m" << std::endl;
+		Span test_four(5);
+
+		test_four.addNumber(21);
+		test_four.addNumber(42);
+		test_four.addNumber(84);
+		std::cout << "Span values: " << test_four << std::endl;
+		std::cout << "Shortest span: " << test_four.shortestSpan() << std::endl;
+		std::cout << "Longest span: " << test_four.longestSpan() << std::endl;
+	}
+	std::cout << std::endl << "\033[1;33m~~~ Done ~~~\033[0m" << std::endl;
 }

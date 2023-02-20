@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2022/09/04 20:57:13 by jvacaris          #+#    #+#              #
-#    Updated: 2023/02/20 21:10:11 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/02/20 22:03:17 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -17,7 +17,7 @@ COLOR_BLUE = \033[1;34m
 COLOR_CYAN = \033[0;36m
 
 SRCS =	main.cpp	\
-		span.cpp
+		mutantstack.cpp
 SRCS_DIR = ./
 
 INCLUDE_DIR = ./
@@ -26,9 +26,9 @@ OBJS_DIR = ./objs/
 
 GCC = clang++
 
-CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
+CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 
-NAME = span
+NAME = mutantstack
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
