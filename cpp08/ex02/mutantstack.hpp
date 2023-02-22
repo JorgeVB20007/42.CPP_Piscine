@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:21:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/22 23:21:45 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:23:10 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,9 +56,7 @@ class MutantStack: public std::stack<T>
 		iterator end()
 		{
 			return (this->c.end());
-		}			
-
-
+		}
 };
 
 
