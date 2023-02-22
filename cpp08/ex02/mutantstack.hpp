@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:21:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/20 22:20:18 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/22 23:21:45 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,7 @@ template<class T>
 class MutantStack: public std::stack<T>
 {
 	public:
-		typedef typename MutantStack::iterator iterator;
-
+		typedef typename std::deque<T>::iterator iterator;
 		MutantStack()
 		{
 			if (NOTIFS)
@@ -32,7 +31,7 @@ class MutantStack: public std::stack<T>
 
 		MutantStack(MutantStack &tocopy)
 		{
-			this = tocopy;
+			this->c = tocopy.c;
 			if (NOTIFS)
 				std::cout << "Span copy constructor called." << std::endl;
 		}
@@ -45,21 +44,20 @@ class MutantStack: public std::stack<T>
 
 		MutantStack & operator = (const MutantStack &toequalize)
 		{
-			//! -------------
-			(void)toequalize;
-			//! -------------
+			this->c = toequalize.c;
 			return (*this);
 		}
 
 		iterator begin()
 		{
-			return (this[0]);
+			return (this->c.begin());
 		}
 
 		iterator end()
 		{
-			return (this[this->size() - 1]);
-		}
+			return (this->c.end());
+		}			
+
 
 };
 
