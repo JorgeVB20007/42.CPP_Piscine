@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/20 21:21:19 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/22 23:23:10 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:36:43 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,7 @@
 
 #include <iostream>
 #include <stack>
+#include <deque>
 
 #define NOTIFS 0
 

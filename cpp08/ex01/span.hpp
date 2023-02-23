@@ -6,12 +6,12 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/16 11:37:11 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/20 21:26:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:35:28 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef ARRAY_HPP
-# define ARRAY_HPP
+#ifndef SPAN_HPP
+# define SPAN_HPP
 
 #include <iostream>
 #include <vector>

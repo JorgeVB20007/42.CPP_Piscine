@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/14 20:36:13 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/02/16 12:21:24 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/02/23 18:35:44 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,7 +50,7 @@ int main()
 		const std::array<const int, 7>first_array = {2048, 4096, 8192, 16384, 32768, 65536, 131072};
 
 		std::cout << "Is 16384 in array?  -> " << easyfind(first_array, 16384) << std::endl;
-		std::cout << "Is 123465 in array? -> " << easyfind(first_array, 123456) << std::endl;
+		std::cout << "Is 123456 in array? -> " << easyfind(first_array, 123456) << std::endl;
 		std::cout << "Is -42 in array?    -> " << easyfind(first_array, -42) << std::endl;
 		std::cout << "Is 2048 in array?   -> " << easyfind(first_array, 2048) << std::endl;
 		std::cout << "Is 1024 in array?   -> " << easyfind(first_array, 1024) << std::endl;
