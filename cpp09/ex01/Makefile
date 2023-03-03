@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 18:42:07 by jvacaris          #+#    #+#              #
-#    Updated: 2023/02/28 19:26:46 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/03/04 00:09:10 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 
-NAME = rpn
+NAME = RPN
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
