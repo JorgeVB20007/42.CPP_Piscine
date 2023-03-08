@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 18:42:07 by jvacaris          #+#    #+#              #
-#    Updated: 2023/03/08 19:36:49 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/03/08 21:41:38 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -28,7 +28,7 @@ GCC = clang++
 
 CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
 
-NAME = RPN
+NAME = PmergeMe
 
 OBJ_FILES = $(SRCS:.cpp=.o)
 OBJ_FILES_INFOLDER = $(addprefix $(OBJS_DIR), $(OBJ_FILES))
