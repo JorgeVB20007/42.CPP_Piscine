@@ -1,27 +1,21 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   BitcoinExchange.hpp                                :+:      :+:    :+:   */
+/*   main.cpp                                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2023/02/23 18:41:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 19:37:43 by jvacaris         ###   ########.fr       */
+/*   Created: 2023/03/08 19:37:56 by jvacaris          #+#    #+#             */
+/*   Updated: 2023/03/08 19:38:17 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef BITCOINEXCHANGE_HPP
-# define BITCOINEXCHANGE_HPP
+#include "PmergeMe.hpp"
 
-#include <iostream>
-#include <string>
-#include <map>
-#include <fstream>
-
-#define CSV_NAME "example.csv"
-#define CSV_HAS_HEADER 1
-
-void BitcoinExchange(std::ifstream *csvstream, std::ifstream *txtstream);
+int main()
+{
 
 
-#endif
+	
+	return (0);
+}

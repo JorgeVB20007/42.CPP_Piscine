@@ -6,9 +6,12 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:28:59 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/04 19:52:31 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/08 19:37:41 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
+
+#ifndef RPN_HPP
+# define RPN_HPP
 
 #include <iostream>
 #include <algorithm>
@@ -51,7 +54,7 @@ class ft_item
 		};
 };
 
-//bool valid_input(std::string inpt);
 int RPN(std::string inpt);
 
 
+#endif

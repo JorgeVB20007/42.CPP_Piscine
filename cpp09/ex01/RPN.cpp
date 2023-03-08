@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:29:01 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/04 19:49:06 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/04 19:55:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -93,7 +93,7 @@ static bool valid_input(std::string inpt)
 				std::cout << inpt << std::endl;
 				for (int count = 0; count < i; count++)
 					std::cout << " ";
-				std::cout << "\033[1;31m^\033[0m" << std::endl;
+				std::cout << "\033[1;33m^\033[0m" << std::endl;
 			}
 			return (false);
 		}

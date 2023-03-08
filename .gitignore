@@ -13,3 +13,4 @@ objs/
 *forest_shrubbery
 *papers
 *.dSYM
+*.csv
