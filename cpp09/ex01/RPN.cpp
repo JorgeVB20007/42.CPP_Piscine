@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:29:01 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/04 19:55:36 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:53:11 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -150,7 +150,12 @@ int RPN_operate(std::list<ft_item> the_queue)
 			else if (pos->get_value() == '*')
 				temp_result = *(last_nums.begin()) * *(--last_nums.end());
 			else if (pos->get_value() == '/')
+			{
+				if (*(--last_nums.end()) == 0)
+					throw ft_item::DivideByZero();
 				temp_result = *(last_nums.begin()) / *(--last_nums.end());
+			}
+				
 
 			pos = the_queue.erase(pos);
 			pos--;

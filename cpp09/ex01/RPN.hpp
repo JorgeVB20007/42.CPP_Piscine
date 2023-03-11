@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:28:59 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 19:37:41 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/11 15:47:40 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,15 @@ class ft_item
 						return("Error: Attempted to operate between less than 2 digits.");
 					else
 						return("Error");
+				}
+		};
+
+		class DivideByZero: public std::exception
+		{
+			public:
+				const char *what() const throw()
+				{
+						return("Error: Attempted to divide by 0.");
 				}
 		};
 };
