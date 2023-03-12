@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/28 19:28:59 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 21:45:02 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:13:40 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,5 +28,8 @@ class ExtraneousChars: public std::exception
 			return("Error: Input contains an invalid character.");
 		}
 };
+
+void PmergeMe_vector(std::vector<int> the_vector);
+void the_printer(std::vector<int> the_vector, std::deque<int> the_deque);
 
 #endif

@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:37:56 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 22:48:21 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/12 20:04:37 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -28,22 +28,16 @@ void the_printer(std::vector<int> the_vector, std::deque<int> the_deque)
 }
 
 
-static void multi_parser(int argc, char **argv, std::vector<int> *the_vector, std::deque<int> *the_deque)
-{
-	
-}
 
 static void single_parser(char *argv, std::vector<int> *the_vector, std::deque<int> *the_deque)
 {
 	int a_number;
 	for (int idx = 0; argv[idx]; idx++)
 	{
+		while (argv[idx] == ' ')
+			idx++;
 		if (!isdigit(argv[idx]))
-		{
-			std::cout << "Index: " << idx << " | Char: " << argv[idx] << std::endl;
 			throw ExtraneousChars();
-		}
-			
 		a_number = std::stoi(&argv[idx]);
 		the_vector->push_back(a_number);
 		the_deque->push_back(a_number);
@@ -55,6 +49,14 @@ static void single_parser(char *argv, std::vector<int> *the_vector, std::deque<i
 		}
 		if (!argv[idx])
 			break;
+	}
+}
+
+static void multi_parser(int argc, char **argv, std::vector<int> *the_vector, std::deque<int> *the_deque)
+{
+	for (int idx = 1; idx < argc; idx++)
+	{
+		single_parser(argv[idx], the_vector, the_deque);
 	}
 }
 
@@ -76,9 +78,22 @@ int main(int argc, char **argv)
 		catch(const std::exception& e)
 		{
 			std::cerr << e.what() << '\n';
+			return (1);
+		}
+	}
+	else
+	{
+		try
+		{
+			multi_parser(argc, argv, &the_vector, &the_deque);
+		}
+		catch(const std::exception& e)
+		{
+			std::cerr << e.what() << '\n';
+			return (1);
 		}
 	}
 	the_printer(the_vector, the_deque);
-	
+	PmergeMe_vector(the_vector);
 	return (0);
 }
