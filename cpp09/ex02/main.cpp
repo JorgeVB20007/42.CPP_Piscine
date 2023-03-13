@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/03/08 19:37:56 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/13 17:25:01 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/13 18:54:06 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -37,7 +37,7 @@ void print_best_unit(long nanosec)
 	while (nanosec_cpy > 1000 && idx <= 2)
 	{
 		if (nanosec_cpy < 1000000)
-			nanosec_dbl = nanosec_cpy / 1000;
+			nanosec_dbl = nanosec_cpy / 1000.0;
 		nanosec_cpy = nanosec_cpy / 1000;
 		idx++;
 	}
@@ -127,8 +127,8 @@ int main(int argc, char **argv)
 	if (std::is_sorted(the_vector.begin(), the_vector.end()))
 	{
 		print_vector(the_vector, "Before:	");
-		std::cout << "INFO: The sequence is already sorted." << std::endl;
 		print_vector(the_vector, "After:	");
+		std::cout << "INFO: The sequence is already sorted, so no operations were executed." << std::endl;
 	}
 	else
 	{
@@ -146,9 +146,9 @@ int main(int argc, char **argv)
 		clock_gettime(CLOCK_REALTIME, &time_struct_deque_end);
 		print_vector(the_vector, "After:	");
 
-		std::cout << "Time to process a range of " << the_vector.size() << " elements with std::vector	: ";
+		std::cout << "Time to process a range of " << the_vector.size() << " elements with std::vector : ";
 		print_best_unit((time_struct_vector_end.tv_nsec + (time_struct_vector_end.tv_sec - time_struct_vector_start.tv_sec) * 1000000000) - time_struct_vector_start.tv_nsec);
-		std::cout << "Time to process a range of " << the_vector.size() << " elements with std::deque	: ";
+		std::cout << "Time to process a range of " << the_vector.size() << " elements with std::deque  : ";
 		print_best_unit((time_struct_deque_end.tv_nsec + (time_struct_deque_end.tv_sec - time_struct_deque_start.tv_sec) * 1000000000) - time_struct_deque_start.tv_nsec);
 
 	}
