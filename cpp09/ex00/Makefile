@@ -6,7 +6,7 @@
 #    By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/02/23 18:42:07 by jvacaris          #+#    #+#              #
-#    Updated: 2023/02/28 19:26:44 by jvacaris         ###   ########.fr        #
+#    Updated: 2023/03/13 19:25:25 by jvacaris         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -26,7 +26,7 @@ OBJS_DIR = ./objs/
 
 GCC = clang++
 
-CPP_FLAGS = -Wall -Werror -Wextra -std=c++98 -g3 -fsanitize=address
+CPP_FLAGS = -Wall -Werror -Wextra -std=c++98
 
 NAME = btc
 
