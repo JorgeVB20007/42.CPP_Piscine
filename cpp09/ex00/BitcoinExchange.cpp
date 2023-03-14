@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:41:45 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 19:32:13 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:23:17 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void BitcoinExchange(std::ifstream *csvstream, std::ifstream *txtstream)
 		time = mktime(&time_struct);
 		if (time == -1 || !check_time_inconsistencies(&time_struct) || buffr.size() < 10 || buffr[10] != ',')
 		{
-			std::cout << "Error: bad input => " << buffr << std::endl;
+			std::cout << "Error: bad input -> " << buffr << std::endl;
 		}
 		else
 		{
@@ -61,6 +61,7 @@ void BitcoinExchange(std::ifstream *csvstream, std::ifstream *txtstream)
 			prices[time] = value;
 		}
 	}
+
 	getline(*txtstream, buffr);
 	while (getline(*txtstream, buffr))
 	{
@@ -77,11 +78,24 @@ void BitcoinExchange(std::ifstream *csvstream, std::ifstream *txtstream)
 				std::cout << "Error: not a positive number." << std::endl;
 			else if (value > 2147483647)
 				std::cout << "Error: too large a number." << std::endl;
-			else if (prices.find(time) == prices.end())
-				std::cout << "Error: this date is not in the database." << std::endl;
 			else
 			{
-				std::cout << buffr.substr(0, 10) << " => " << &buffr[13] << " = " << prices[time] * value << std::endl;
+				if (prices.begin()->first > time)
+					std::cout << "Error: this date is not in the database." << std::endl;
+				else
+				{
+					while (prices.find(time) == prices.end())
+					{
+						time = time - 200;
+					}
+					if (prices.find(time) == prices.end())
+					{
+						std::cout << "Error: this date is not in the database." << std::endl;
+					}
+					else
+						std::cout << buffr.substr(0, 10) << " => " << &buffr[13] << " = " << prices[time] * value << std::endl;					
+				}
+
 			}
 		}
 	}

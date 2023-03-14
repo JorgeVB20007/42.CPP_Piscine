@@ -6,7 +6,7 @@
 /*   By: jvacaris <jvacaris@student.42madrid.com    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/02/23 18:41:47 by jvacaris          #+#    #+#             */
-/*   Updated: 2023/03/08 19:37:43 by jvacaris         ###   ########.fr       */
+/*   Updated: 2023/03/14 10:24:36 by jvacaris         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@
 #include <map>
 #include <fstream>
 
-#define CSV_NAME "example.csv"
+#define CSV_NAME "data.csv"
 #define CSV_HAS_HEADER 1
 
 void BitcoinExchange(std::ifstream *csvstream, std::ifstream *txtstream);
